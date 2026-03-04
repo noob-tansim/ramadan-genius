@@ -8,7 +8,10 @@ const SHEET_NAME = "Responses";
 const SECRET = "rg2026_phulkuri_secretKey99";
 
 // Server-side contest window (Asia/Dhaka)
-const CONTEST_START = new Date("2026-03-07T10:00:00+06:00");
+// ORIGINAL (restore after testing):
+// const CONTEST_START = new Date("2026-03-07T10:00:00+06:00");
+// TEMPORARY TEST MODE:
+const CONTEST_START = new Date("2026-03-05T00:00:00+06:00");
 const CONTEST_END = new Date("2026-03-08T10:00:00+06:00");
 const SUBMISSION_GRACE_MINUTES = 30;
 const CONTEST_GRACE_END = new Date(CONTEST_END.getTime() + SUBMISSION_GRACE_MINUTES * 60 * 1000);

@@ -26,7 +26,11 @@ const TOTAL_QUESTIONS = 60;
 const STORAGE_KEY = "ramadan_genius_v2";
 
 // Contest window: Asia/Dhaka
-const CONTEST_START_ISO = "2026-03-07T10:00:00+06:00";
+// ORIGINAL (restore after testing):
+// const CONTEST_START_ISO = "2026-03-07T10:00:00+06:00";
+// const CONTEST_END_ISO = "2026-03-08T10:00:00+06:00";
+// TEMPORARY TEST MODE:
+const CONTEST_START_ISO = "2026-03-05T00:00:00+06:00";
 const CONTEST_END_ISO = "2026-03-08T10:00:00+06:00";
 const CONTEST_START_MS = Date.parse(CONTEST_START_ISO);
 const CONTEST_END_MS = Date.parse(CONTEST_END_ISO);
