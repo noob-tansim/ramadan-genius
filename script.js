@@ -181,8 +181,8 @@ function renderGate() {
     return;
   }
 
-  // Hide landing details once contest starts
-  if (landing) landing.style.display = "none";
+  // Keep landing content visible in all phases
+  if (landing) landing.style.display = "";
 
   if (phase === "after") {
     $("gateTitle").innerText = "🔒 প্রতিযোগিতা শেষ";
