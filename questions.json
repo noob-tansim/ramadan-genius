@@ -1,0 +1,2766 @@
+{
+  "A": [
+    {
+      "id": "a01",
+      "q_bn": "সাওম শব্দের আভিধানিক অর্থ কী? (What is the literal meaning of Sawm?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "উপবাস থাকা (To starve)"
+        },
+        {
+          "id": "B",
+          "text_bn": "বিরত থাকা (To abstain)"
+        },
+        {
+          "id": "C",
+          "text_bn": "প্রার্থনা করা (To pray)"
+        },
+        {
+          "id": "D",
+          "text_bn": "দান করা (To donate)"
+        }
+      ]
+    },
+    {
+      "id": "a02",
+      "q_bn": "পবিত্র কুরআনের কোন সূরায় রোজা ফরজ হওয়ার কথা বলা হয়েছে? (In which Surah of the Holy Quran is fasting made obligatory?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা আল-ইমরান (Surah Al-Imran)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা আল-বাকারাহ (Surah Al-Baqarah)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা আন-নিসা (Surah An-Nisa)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা আল-মায়িদাহ (Surah Al-Ma'idah)"
+        }
+      ]
+    },
+    {
+      "id": "a03",
+      "q_bn": "\"হে মুমিনগণ! তোমাদের ওপর রোজা ফরজ করা হয়েছে...\" - এই আয়াতের পরবর্তী অংশ কী? (\"O you who believe! Fasting is prescribed for you...\" - What is the next part of this verse?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "যাতে তোমরা ধনী হতে পারো (so that you may become rich)"
+        },
+        {
+          "id": "B",
+          "text_bn": "যাতে তোমরা সুস্থ থাকো (so that you may stay healthy)"
+        },
+        {
+          "id": "C",
+          "text_bn": "যাতে তোমরা তাকওয়া অর্জন করতে পারো (so that you may attain Taqwa)"
+        },
+        {
+          "id": "D",
+          "text_bn": "যাতে তোমরা শক্তিশালী হও (so that you may become strong)"
+        }
+      ]
+    },
+    {
+      "id": "a04",
+      "q_bn": "রাসূলুল্লাহ (সা.) বলেছেন, \"সাওম হলো একটি...\" - শূন্যস্থানে কী বসবে? (The Prophet (PBUH) said, \"Fasting is a...\" - What will fill the blank?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "তলোয়ার (Sword)"
+        },
+        {
+          "id": "B",
+          "text_bn": "ঢাল (Shield)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আলো (Light)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মুকুট (Crown)"
+        }
+      ]
+    },
+    {
+      "id": "a05",
+      "q_bn": "ইসলামী বর্ষপঞ্জি অনুযায়ী রমজান কততম মাস? (According to the Islamic calendar, which month is Ramadan?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "৭ম (7th)"
+        },
+        {
+          "id": "B",
+          "text_bn": "৮ম (8th)"
+        },
+        {
+          "id": "C",
+          "text_bn": "৯ম (9th)"
+        },
+        {
+          "id": "D",
+          "text_bn": "১০ম (10th)"
+        }
+      ]
+    },
+    {
+      "id": "a06",
+      "q_bn": "রোজা ভাঙার জন্য সূর্যাস্তের পর আমরা যে খাবার খাই, তাকে কী বলে? (What is the food we eat after sunset to break the fast called?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সাহরি (Suhoor)"
+        },
+        {
+          "id": "B",
+          "text_bn": "ইফতার (Iftar)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ডিনার (Dinner)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ফিদিয়া (Fidyah)"
+        }
+      ]
+    },
+    {
+      "id": "a07",
+      "q_bn": "রাসূল (সা.) কোন খাবারটি দিয়ে ইফতার করাকে উত্তম বলেছেন? (Which food did the Prophet (PBUH) say is best to break the fast with?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আপেল (Apple)"
+        },
+        {
+          "id": "B",
+          "text_bn": "খেজুর (Dates)"
+        },
+        {
+          "id": "C",
+          "text_bn": "মধু (Honey)"
+        },
+        {
+          "id": "D",
+          "text_bn": "দুধ (Milk)"
+        }
+      ]
+    },
+    {
+      "id": "a08",
+      "q_bn": "হাদিস অনুযায়ী, রোজাদারের মুখের গন্ধ আল্লাহর কাছে কিসের চেয়েও বেশি সুগন্ধিযুক্ত? (According to Hadith, the smell of a fasting person's mouth is more fragrant to Allah than what?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "গোলাপের (Rose)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মেশকের (Musk)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আতরের (Attar)"
+        },
+        {
+          "id": "D",
+          "text_bn": "চন্দনের (Sandalwood)"
+        }
+      ]
+    },
+    {
+      "id": "a09",
+      "q_bn": "রমজান মাসে জান্নাতের দরজাগুলোর কী অবস্থা হয়? (What happens to the gates of Jannah in the month of Ramadan?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "বন্ধ করে দেওয়া হয় (They are closed)"
+        },
+        {
+          "id": "B",
+          "text_bn": "খুলে দেওয়া হয় (They are opened)"
+        },
+        {
+          "id": "C",
+          "text_bn": "পাহারা দেওয়া হয় (They are guarded)"
+        },
+        {
+          "id": "D",
+          "text_bn": "অদৃশ্য হয়ে যায় (They disappear)"
+        }
+      ]
+    },
+    {
+      "id": "a10",
+      "q_bn": "রমজান মাসে শয়তানদের কী করা হয়? (What is done to the devils in the month of Ramadan?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "শিকল দিয়ে বাঁধা হয় (Tied with chains)"
+        },
+        {
+          "id": "B",
+          "text_bn": "পৃথিবীতে ছেড়ে দেওয়া হয় (Released on earth)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ঘুম পাড়িয়ে রাখা হয় (Put to sleep)"
+        },
+        {
+          "id": "D",
+          "text_bn": "দূরে পাঠিয়ে দেওয়া হয় (Sent far away)"
+        }
+      ]
+    },
+    {
+      "id": "a11",
+      "q_bn": "রোজাদারদের জন্য জান্নাতে যে বিশেষ দরজা রয়েছে, তার নাম কী? (What is the name of the special gate in Jannah for fasting people?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আল-কাওসার (Al-Kawthar)"
+        },
+        {
+          "id": "B",
+          "text_bn": "আর-রাইয়ান (Ar-Rayyan)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আল-ফিরদাউস (Al-Firdaus)"
+        },
+        {
+          "id": "D",
+          "text_bn": "আস-সালাম (As-Salam)"
+        }
+      ]
+    },
+    {
+      "id": "a12",
+      "q_bn": "সুবহে সাদিক থেকে শুরু করে কখন পর্যন্ত রোজা রাখতে হয়? (From true dawn, until when do we have to fast?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "জোহর পর্যন্ত (Until Zuhr)"
+        },
+        {
+          "id": "B",
+          "text_bn": "আসর পর্যন্ত (Until Asr)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূর্যাস্ত পর্যন্ত (Until sunset)"
+        },
+        {
+          "id": "D",
+          "text_bn": "এশা পর্যন্ত (Until Isha)"
+        }
+      ]
+    },
+    {
+      "id": "a13",
+      "q_bn": "সাহরি খাওয়া সম্পর্কে মহানবী (সা.) কী বলেছেন? (What did the Prophet (PBUH) say about eating Suhoor?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "এতে ওজন বাড়ে (It increases weight)"
+        },
+        {
+          "id": "B",
+          "text_bn": "এতে বরকত রয়েছে (There is blessing in it)"
+        },
+        {
+          "id": "C",
+          "text_bn": "এটি না খেলেও চলবে (It's okay not to eat it)"
+        },
+        {
+          "id": "D",
+          "text_bn": "এটি খাওয়া নিষেধ (It is forbidden to eat)"
+        }
+      ]
+    },
+    {
+      "id": "a14",
+      "q_bn": "লাইলাতুল কদর হাজার মাসের চেয়েও কী? (Lailatul Qadr is what compared to a thousand months?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "দীর্ঘ (Longer)"
+        },
+        {
+          "id": "B",
+          "text_bn": "ছোট (Shorter)"
+        },
+        {
+          "id": "C",
+          "text_bn": "উত্তম (Better)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সমান (Equal)"
+        }
+      ]
+    },
+    {
+      "id": "a15",
+      "q_bn": "রমজান মাসের কোন দশককে 'নাজাত' বা মুক্তির দশক বলা হয়? (Which ten days of Ramadan are called the days of 'Najat' or salvation?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "প্রথম ১০ দিন (First 10 days)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মাঝের ১০ দিন (Middle 10 days)"
+        },
+        {
+          "id": "C",
+          "text_bn": "শেষ ১০ দিন (Last 10 days)"
+        },
+        {
+          "id": "D",
+          "text_bn": "পুরো মাস (The whole month)"
+        }
+      ]
+    },
+    {
+      "id": "a16",
+      "q_bn": "\"যে ব্যক্তি ঈমান ও সওয়াবের আশায় রমজানে রোজা রাখবে...\" - তার কী ক্ষমা করা হবে? (\"Whoever fasts in Ramadan with faith and seeking reward...\" - what will be forgiven for him?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "তার সব ঋণ (All his debts)"
+        },
+        {
+          "id": "B",
+          "text_bn": "তার অতীতের সব গুনাহ (All his past sins)"
+        },
+        {
+          "id": "C",
+          "text_bn": "তার ভবিষ্যতের গুনাহ (His future sins)"
+        },
+        {
+          "id": "D",
+          "text_bn": "তার পরিবারের গুনাহ (His family's sins)"
+        }
+      ]
+    },
+    {
+      "id": "a17",
+      "q_bn": "রমজান মাসে কোন নামাজটি জামাতের সাথে পড়া সুন্নাত? (Which prayer is Sunnah to perform in congregation during Ramadan?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "তাহাজ্জুদ (Tahajjud)"
+        },
+        {
+          "id": "B",
+          "text_bn": "তারাবিহ (Tarawih)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ইশরাক (Ishraq)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সালাতুত তাসবিহ (Salatul Tasbih)"
+        }
+      ]
+    },
+    {
+      "id": "a18",
+      "q_bn": "কেউ যদি ভুলে কিছু খেয়ে ফেলে, তবে তার রোজা সম্পর্কে হাদিসের বিধান কী? (If someone eats something by mistake, what is the ruling of Hadith regarding his fast?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "রোজা ভেঙে যাবে (The fast will break)"
+        },
+        {
+          "id": "B",
+          "text_bn": "রোজা ভাঙবে না (The fast will not break)"
+        },
+        {
+          "id": "C",
+          "text_bn": "তাকে কাফফারা দিতে হবে (He must pay Kaffarah)"
+        },
+        {
+          "id": "D",
+          "text_bn": "তাকে আবার রোজা রাখতে হবে (He must fast again)"
+        }
+      ]
+    },
+    {
+      "id": "a19",
+      "q_bn": "রোজা অবস্থায় নিচের কোন কাজটি করলে সওয়াব কমে যায়? (Doing which of the following acts reduces the reward of fasting?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "ঘুমালে (Sleeping)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মিথ্যা কথা বললে (Telling lies)"
+        },
+        {
+          "id": "C",
+          "text_bn": "পড়াশোনা করলে (Studying)"
+        },
+        {
+          "id": "D",
+          "text_bn": "চুপ থাকলে (Staying silent)"
+        }
+      ]
+    },
+    {
+      "id": "a20",
+      "q_bn": "রমজান মাস শেষে শাওয়াল মাসের প্রথম দিন আমরা কী পালন করি? (What do we celebrate on the first day of Shawwal after the month of Ramadan ends?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "ঈদুল আজহা (Eid ul-Adha)"
+        },
+        {
+          "id": "B",
+          "text_bn": "শবে বরাত (Shab-e-Barat)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ঈদুল ফিতর (Eid ul-Fitr)"
+        },
+        {
+          "id": "D",
+          "text_bn": "আশুরা (Ashura)"
+        }
+      ]
+    },
+    {
+      "id": "a21",
+      "q_bn": "ইতিকাফ কোথায় করা হয়? (Where is Itikaf performed?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "নিজের ঘরে (In one's own room)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মসজিদে (In the mosque)"
+        },
+        {
+          "id": "C",
+          "text_bn": "মাঠে (In the field)"
+        },
+        {
+          "id": "D",
+          "text_bn": "পাহাড়ের গুহায় (In a mountain cave)"
+        }
+      ]
+    },
+    {
+      "id": "a22",
+      "q_bn": "কোন অবস্থায় রোজা না রাখার অনুমতি আছে? (In which condition is it permitted not to fast?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "পরীক্ষা থাকলে (If there is an exam)"
+        },
+        {
+          "id": "B",
+          "text_bn": "খেলাধুলা থাকলে (If there are sports)"
+        },
+        {
+          "id": "C",
+          "text_bn": "অসুস্থ বা সফরে থাকলে (If sick or on a journey)"
+        },
+        {
+          "id": "D",
+          "text_bn": "গরম বেশি হলে (If it is too hot)"
+        }
+      ]
+    },
+    {
+      "id": "a23",
+      "q_bn": "রমজান মাসকে আরবিতে কী বলা হয়? (What is the month of Ramadan called in Arabic?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "শাহরুল কুরআন (Month of Quran)"
+        },
+        {
+          "id": "B",
+          "text_bn": "শাহরুল হজ (Month of Hajj)"
+        },
+        {
+          "id": "C",
+          "text_bn": "শাহরুল মিরাজ (Month of Miraj)"
+        },
+        {
+          "id": "D",
+          "text_bn": "শাহরুল হিজরত (Month of Hijrah)"
+        }
+      ]
+    },
+    {
+      "id": "a24",
+      "q_bn": "রোজা কাদের ওপর ফরজ? (Fasting is obligatory upon whom?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সকল মানুষের ওপর (Upon all humans)"
+        },
+        {
+          "id": "B",
+          "text_bn": "কেবল গরিবদের ওপর (Only upon the poor)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সুস্থ, প্রাপ্তবয়স্ক মুসলিমের ওপর (Upon a healthy, adult Muslim)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কেবল বয়স্কদের ওপর (Only upon the elderly)"
+        }
+      ]
+    },
+    {
+      "id": "a25",
+      "q_bn": "হাদিসে বলা হয়েছে, আল্লাহ নিজে রোজার কী দেবেন? (It is stated in Hadith, Allah Himself will give what for fasting?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সম্মান (Respect)"
+        },
+        {
+          "id": "B",
+          "text_bn": "প্রতিদান বা পুরস্কার (Reward)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সম্পদ (Wealth)"
+        },
+        {
+          "id": "D",
+          "text_bn": "খাবার (Food)"
+        }
+      ]
+    },
+    {
+      "id": "a26",
+      "q_bn": "ইফতারের সময় দোয়া করলে সেই দোয়া কেমন হয়? (How is the dua made at the time of Iftar?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "কবুল হয় না (Not accepted)"
+        },
+        {
+          "id": "B",
+          "text_bn": "কবুল হওয়ার সম্ভাবনা বেশি (Highly likely to be accepted)"
+        },
+        {
+          "id": "C",
+          "text_bn": "পরে কবুল হয় (Accepted later)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কেবল বড়দের দোয়া কবুল হয় (Only adults' dua is accepted)"
+        }
+      ]
+    },
+    {
+      "id": "a27",
+      "q_bn": "ঈদের দিন রোজা রাখার বিধান কী? (What is the ruling on fasting on Eid day?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "ফরজ (Fard)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মুস্তাহাব (Mustahab)"
+        },
+        {
+          "id": "C",
+          "text_bn": "হারাম বা নিষিদ্ধ (Haram or forbidden)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মাকরুহ (Makruh)"
+        }
+      ]
+    },
+    {
+      "id": "a28",
+      "q_bn": "রমজানে সদকাতুল ফিতর আদায় করা কী? (What is the ruling of paying Sadaqatul Fitr in Ramadan?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "ওয়াজিব (Wajib)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সুন্নত (Sunnah)"
+        },
+        {
+          "id": "C",
+          "text_bn": "নফল (Nafl)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মুস্তাহাব (Mustahab)"
+        }
+      ]
+    },
+    {
+      "id": "a29",
+      "q_bn": "তাকওয়া শব্দের অর্থ কী? (What is the meaning of the word Taqwa?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আল্লাহভীতি (Fear of Allah)"
+        },
+        {
+          "id": "B",
+          "text_bn": "দানশীলতা (Generosity)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সততা (Honesty)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সাহস (Courage)"
+        }
+      ]
+    },
+    {
+      "id": "a30",
+      "q_bn": "কোন সময়টিতে খাবার খেলে সাহরি হয় না? (Eating at which time is not considered Suhoor?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "মধ্যরাতে (At midnight)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সুবহে সাদিকের পর (After true dawn)"
+        },
+        {
+          "id": "C",
+          "text_bn": "রাতের শেষ ভাগে (In the last part of the night)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ঘুমানোর ঠিক আগে (Right before sleeping)"
+        }
+      ]
+    },
+    {
+      "id": "a31",
+      "q_bn": "আল-কুরআন সর্বপ্রথম কোন রাতে নাজিল হয়? (On which night was Al-Quran first revealed?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "শবে মেরাজ (Shab-e-Meraj)"
+        },
+        {
+          "id": "B",
+          "text_bn": "শবে বরাত (Shab-e-Barat)"
+        },
+        {
+          "id": "C",
+          "text_bn": "শবে কদর (Shab-e-Qadr)"
+        },
+        {
+          "id": "D",
+          "text_bn": "আশুরার রাত (Night of Ashura)"
+        }
+      ]
+    },
+    {
+      "id": "a32",
+      "q_bn": "নবীজি (সা.) হেরা গুহায় কী করতেন? (What did the Prophet (PBUH) do in the Cave of Hira?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "বিশ্রাম নিতেন (He rested)"
+        },
+        {
+          "id": "B",
+          "text_bn": "ব্যবসা করতেন (He traded)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আল্লাহর ধ্যানে মগ্ন থাকতেন (He was absorbed in Allah's meditation)"
+        },
+        {
+          "id": "D",
+          "text_bn": "বই পড়তেন (He read books)"
+        }
+      ]
+    },
+    {
+      "id": "a33",
+      "q_bn": "প্রথম ওহি নিয়ে কোন ফেরেশতা এসেছিলেন? (Which angel came with the first revelation?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "হযরত মিকাইল (আ.) (Hazrat Mikail (AS))"
+        },
+        {
+          "id": "B",
+          "text_bn": "হযরত জিবরাইল (আ.) (Hazrat Jibreel (AS))"
+        },
+        {
+          "id": "C",
+          "text_bn": "হযরত ইসরাফিল (আ.) (Hazrat Israfil (AS))"
+        },
+        {
+          "id": "D",
+          "text_bn": "হযরত আজরাইল (আ.) (Hazrat Azrail (AS))"
+        }
+      ]
+    },
+    {
+      "id": "a34",
+      "q_bn": "পবিত্র কুরআনের প্রথম নাজিল হওয়া শব্দ কোনটি? (What was the first revealed word of the Holy Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "কুল (Say)"
+        },
+        {
+          "id": "B",
+          "text_bn": "ইকরা (Read)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আলহামদু (All praise)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ইয়া আইয়্যুহা (O you)"
+        }
+      ]
+    },
+    {
+      "id": "a35",
+      "q_bn": "প্রথম ওহিতে সূরা আলাকের কয়টি আয়াত নাজিল হয়েছিল? (How many verses of Surah Al-Alaq were revealed in the first Wahi?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "৩টি (3)"
+        },
+        {
+          "id": "B",
+          "text_bn": "৫টি (5)"
+        },
+        {
+          "id": "C",
+          "text_bn": "৭টি (7)"
+        },
+        {
+          "id": "D",
+          "text_bn": "১০টি (10)"
+        }
+      ]
+    },
+    {
+      "id": "a36",
+      "q_bn": "সম্পূর্ণ কুরআন নাজিল হতে কত বছর সময় লেগেছিল? (How many years did it take for the entire Quran to be revealed?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "প্রায় ১০ বছর (About 10 years)"
+        },
+        {
+          "id": "B",
+          "text_bn": "প্রায় ২৩ বছর (About 23 years)"
+        },
+        {
+          "id": "C",
+          "text_bn": "প্রায় ৪০ বছর (About 40 years)"
+        },
+        {
+          "id": "D",
+          "text_bn": "প্রায় ৬৩ বছর (About 63 years)"
+        }
+      ]
+    },
+    {
+      "id": "a37",
+      "q_bn": "মক্কায় অবতীর্ণ সূরাগুলোকে কী বলা হয়? (What are the Surahs revealed in Makkah called?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "মাদানী সূরা (Madani Surah)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মাক্কী সূরা (Makki Surah)"
+        },
+        {
+          "id": "C",
+          "text_bn": "কুফী সূরা (Kufi Surah)"
+        },
+        {
+          "id": "D",
+          "text_bn": "হিজরী সূরা (Hijri Surah)"
+        }
+      ]
+    },
+    {
+      "id": "a38",
+      "q_bn": "মাদানী সূরাগুলোতে সাধারণত কোন বিষয় নিয়ে বেশি আলোচনা করা হয়েছে? (Which topics are generally discussed more in Madani Surahs?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "জান্নাত ও জাহান্নাম (Jannah and Jahannam)"
+        },
+        {
+          "id": "B",
+          "text_bn": "পূর্ববর্তী নবীদের গল্প (Stories of previous prophets)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আইন-কানুন ও শরীয়ত (Laws and Shariah)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সৃষ্টিজগত (The universe)"
+        }
+      ]
+    },
+    {
+      "id": "a39",
+      "q_bn": "\"নিশ্চয়ই আমি এটি (কুরআন) অবতীর্ণ করেছি...\" - সূরা কদরের এই আয়াতের পরের শব্দ কী? (\"Indeed, We sent it [the Quran] down...\" - what is the next word of this verse of Surah Qadr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "রমজান মাসে (In the month of Ramadan)"
+        },
+        {
+          "id": "B",
+          "text_bn": "কদরের রাতে (During the Night of Decree/Qadr)"
+        },
+        {
+          "id": "C",
+          "text_bn": "মক্কায় (In Makkah)"
+        },
+        {
+          "id": "D",
+          "text_bn": "জিবরাইলের মাধ্যমে (Through Jibreel)"
+        }
+      ]
+    },
+    {
+      "id": "a40",
+      "q_bn": "কুরআন সংরক্ষণের দায়িত্ব কে নিয়েছেন? (Who has taken the responsibility of preserving the Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "নবী মুহাম্মদ (সা.) (Prophet Muhammad (PBUH))"
+        },
+        {
+          "id": "B",
+          "text_bn": "ফেরেশতারা (The angels)"
+        },
+        {
+          "id": "C",
+          "text_bn": "স্বয়ং আল্লাহ (Allah Himself)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সাহাবীরা (The companions)"
+        }
+      ]
+    },
+    {
+      "id": "a41",
+      "q_bn": "\"কুরআন\" শব্দের একটি অর্থ হলো— (One meaning of the word \"Quran\" is—)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "যা বারবার পড়া হয় (That which is read repeatedly)"
+        },
+        {
+          "id": "B",
+          "text_bn": "যা লেখা হয় (That which is written)"
+        },
+        {
+          "id": "C",
+          "text_bn": "যা শোনা হয় (That which is heard)"
+        },
+        {
+          "id": "D",
+          "text_bn": "যা লুকানো থাকে (That which is hidden)"
+        }
+      ]
+    },
+    {
+      "id": "a42",
+      "q_bn": "কুরআন নাজিলের সময় আরবের মানুষদের অবস্থা কেমন ছিল? (What was the condition of the Arab people during the revelation of the Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "তারা অনেক শিক্ষিত ছিল (They were very educated)"
+        },
+        {
+          "id": "B",
+          "text_bn": "তারা অজ্ঞতা ও অন্ধকারে ছিল (They were in ignorance and darkness)"
+        },
+        {
+          "id": "C",
+          "text_bn": "তারা খুব শান্তিতে ছিল (They were in great peace)"
+        },
+        {
+          "id": "D",
+          "text_bn": "তারা প্রযুক্তি নিয়ে ব্যস্ত ছিল (They were busy with technology)"
+        }
+      ]
+    },
+    {
+      "id": "a43",
+      "q_bn": "মহানবী (সা.) যখন প্রথম ওহি পান, তখন তাঁর বয়স কত ছিল? (What was the Prophet's (PBUH) age when he received the first revelation?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "২৫ বছর (25 years)"
+        },
+        {
+          "id": "B",
+          "text_bn": "৩০ বছর (30 years)"
+        },
+        {
+          "id": "C",
+          "text_bn": "৪০ বছর (40 years)"
+        },
+        {
+          "id": "D",
+          "text_bn": "৫০ বছর (50 years)"
+        }
+      ]
+    },
+    {
+      "id": "a44",
+      "q_bn": "পবিত্র কুরআনে মোট কয়টি সূরা রয়েছে? (How many Surahs are there in the Holy Quran in total?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "৯৯টি (99)"
+        },
+        {
+          "id": "B",
+          "text_bn": "১০০টি (100)"
+        },
+        {
+          "id": "C",
+          "text_bn": "১১৪টি (114)"
+        },
+        {
+          "id": "D",
+          "text_bn": "১২০টি (120)"
+        }
+      ]
+    },
+    {
+      "id": "a45",
+      "q_bn": "কুরআনের সবচেয়ে বড় সূরা কোনটি? (Which is the longest Surah of the Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা ইয়াসিন (Surah Ya-Sin)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা আল-বাকারাহ (Surah Al-Baqarah)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা আল-ইমরান (Surah Al-Imran)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা আন-নিসা (Surah An-Nisa)"
+        }
+      ]
+    },
+    {
+      "id": "a46",
+      "q_bn": "কুরআনের সবচেয়ে ছোট সূরা কোনটি? (Which is the shortest Surah of the Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা আল-ইখলাস (Surah Al-Ikhlas)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা আল-আসর (Surah Al-Asr)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা আল-কাওসার (Surah Al-Kawthar)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা আন-নাস (Surah An-Nas)"
+        }
+      ]
+    },
+    {
+      "id": "a47",
+      "q_bn": "যারা ওহি লিখে রাখতেন, তাঁদের কী বলা হতো? (What were those who used to write down the revelations called?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "কাতিবে ওহি (Katib-e-Wahi / Scribes of revelation)"
+        },
+        {
+          "id": "B",
+          "text_bn": "হাফেজ (Hafiz)"
+        },
+        {
+          "id": "C",
+          "text_bn": "কারী (Qari)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মুফাসসির (Mufassir)"
+        }
+      ]
+    },
+    {
+      "id": "a48",
+      "q_bn": "সাহাবীরা প্রাথমিকভাবে ওহি কোথায় লিখে রাখতেন? (Where did the companions initially write down the revelations?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "খাতায় (In notebooks)"
+        },
+        {
+          "id": "B",
+          "text_bn": "রেশমি কাপড়ে (On silk clothes)"
+        },
+        {
+          "id": "C",
+          "text_bn": "পাথর, হাড় ও চামড়ায় (On stones, bones, and leather)"
+        },
+        {
+          "id": "D",
+          "text_bn": "তামার পাতে (On copper plates)"
+        }
+      ]
+    },
+    {
+      "id": "a49",
+      "q_bn": "আল-কুরআনের প্রথম পূর্ণাঙ্গ সূরা হিসেবে কোনটি অবতীর্ণ হয়? (Which Surah was revealed as the first complete Surah of Al-Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা আল-ফাতিহা (Surah Al-Fatiha)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা আল-বাকারাহ (Surah Al-Baqarah)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা আল-আলাক (Surah Al-Alaq)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা আল-মুলক (Surah Al-Mulk)"
+        }
+      ]
+    },
+    {
+      "id": "a50",
+      "q_bn": "\"পড়ুন, আপনার রবের নামে, যিনি সৃষ্টি করেছেন...\" - এটি কোন সূরার প্রথম আয়াত? (\"Read in the name of your Lord who created...\" - This is the first verse of which Surah?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা মুদ্দাসসির (Surah Al-Muddaththir)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা আল-আলাক (Surah Al-Alaq)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা আল-কালাম (Surah Al-Qalam)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা আল-মুজ্জাম্মিল (Surah Al-Muzzammil)"
+        }
+      ]
+    },
+    {
+      "id": "a51",
+      "q_bn": "ওহি নাজিল হওয়ার সময় রাসূল (সা.)-এর কেমন অনুভব হতো? (How did the Prophet (PBUH) feel when revelation came down?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "তাঁর খুব ঠান্ডা লাগত (He felt very cold)"
+        },
+        {
+          "id": "B",
+          "text_bn": "তাঁর শরীর ঘেমে যেত ও ভারী মনে হতো (His body would sweat and feel heavy)"
+        },
+        {
+          "id": "C",
+          "text_bn": "তিনি হাসতে থাকতেন (He would keep smiling)"
+        },
+        {
+          "id": "D",
+          "text_bn": "তিনি ঘুমিয়ে পড়তেন (He would fall asleep)"
+        }
+      ]
+    },
+    {
+      "id": "a52",
+      "q_bn": "প্রথম ওহি পাওয়ার পর নবীজি (সা.) ভয় পেয়ে কার কাছে গিয়েছিলেন? (After receiving the first revelation, to whom did the Prophet (PBUH) go in fear?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "হযরত আবু বকর (রা.) (Hazrat Abu Bakr (RA))"
+        },
+        {
+          "id": "B",
+          "text_bn": "হযরত খাদিজা (রা.) (Hazrat Khadija (RA))"
+        },
+        {
+          "id": "C",
+          "text_bn": "হযরত আলী (রা.) (Hazrat Ali (RA))"
+        },
+        {
+          "id": "D",
+          "text_bn": "আবু তালিব (Abu Talib)"
+        }
+      ]
+    },
+    {
+      "id": "a53",
+      "q_bn": "পবিত্র কুরআনে মোট কয়টি পারা (খণ্ড) আছে? (How many Juz (parts) are there in the Holy Quran in total?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "২০টি (20)"
+        },
+        {
+          "id": "B",
+          "text_bn": "২৫টি (25)"
+        },
+        {
+          "id": "C",
+          "text_bn": "৩০টি (30)"
+        },
+        {
+          "id": "D",
+          "text_bn": "৪০টি (40)"
+        }
+      ]
+    },
+    {
+      "id": "a54",
+      "q_bn": "আল-কুরআনকে কার বাণী বলা হয়? (Whose word is Al-Quran considered to be?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "ফেরেশতাদের বাণী (Words of the angels)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মহান আল্লাহর বাণী (Words of Almighty Allah)"
+        },
+        {
+          "id": "C",
+          "text_bn": "নবীদের বাণী (Words of the prophets)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সাহাবীদের বাণী (Words of the companions)"
+        }
+      ]
+    },
+    {
+      "id": "a55",
+      "q_bn": "কুরআনে উল্লিখিত একমাত্র সাহাবীর নাম কী? (What is the name of the only companion mentioned in the Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "হযরত আবু বকর (রা.) (Hazrat Abu Bakr (RA))"
+        },
+        {
+          "id": "B",
+          "text_bn": "হযরত উমর (রা.) (Hazrat Umar (RA))"
+        },
+        {
+          "id": "C",
+          "text_bn": "হযরত যায়েদ (রা.) (Hazrat Zayd (RA))"
+        },
+        {
+          "id": "D",
+          "text_bn": "হযরত আলী (রা.) (Hazrat Ali (RA))"
+        }
+      ]
+    },
+    {
+      "id": "a56",
+      "q_bn": "কুরআন তেলাওয়াতের সময় আমাদের কী করা উচিত? (What should we do while reciting the Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "দ্রুত পড়া (Read fast)"
+        },
+        {
+          "id": "B",
+          "text_bn": "তাজবীদসহ মনোযোগ দিয়ে পড়া (Read attentively with Tajweed)"
+        },
+        {
+          "id": "C",
+          "text_bn": "অন্য কাজ করতে করতে পড়া (Read while doing other work)"
+        },
+        {
+          "id": "D",
+          "text_bn": "শুধু আওয়াজ করে পড়া (Read only making sound)"
+        }
+      ]
+    },
+    {
+      "id": "a57",
+      "q_bn": "হেরা গুহাটি কোন পাহাড়ে অবস্থিত? (In which mountain is the Cave of Hira located?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "জাবালে উহুদ (Jabal Uhud)"
+        },
+        {
+          "id": "B",
+          "text_bn": "জাবালে নূর (Jabal an-Nour)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সাফা পাহাড় (Mount Safa)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মারওয়া পাহাড় (Mount Marwah)"
+        }
+      ]
+    },
+    {
+      "id": "a58",
+      "q_bn": "কোন খলিফার আমলে আল-কুরআন গ্রন্থাকারে প্রথম সংকলিত হয়? (During which Caliph's reign was Al-Quran first compiled into a book format?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "হযরত আবু বকর (রা.) (Hazrat Abu Bakr (RA))"
+        },
+        {
+          "id": "B",
+          "text_bn": "হযরত উমর (রা.) (Hazrat Umar (RA))"
+        },
+        {
+          "id": "C",
+          "text_bn": "হযরত উসমান (রা.) (Hazrat Uthman (RA))"
+        },
+        {
+          "id": "D",
+          "text_bn": "হযরত আলী (রা.) (Hazrat Ali (RA))"
+        }
+      ]
+    },
+    {
+      "id": "a59",
+      "q_bn": "সূরা ফাতিহার অপর নাম কী? (What is another name for Surah Al-Fatiha?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "উম্মুল কুরআন বা কুরআনের মা (Ummul Quran or Mother of the Quran)"
+        },
+        {
+          "id": "B",
+          "text_bn": "কুরআনের হৃদয় (Heart of the Quran)"
+        },
+        {
+          "id": "C",
+          "text_bn": "কুরআনের আলো (Light of the Quran)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কুরআনের মুকুট (Crown of the Quran)"
+        }
+      ]
+    },
+    {
+      "id": "a60",
+      "q_bn": "কুরআন কোন ভাষায় অবতীর্ণ হয়েছে? (In which language was the Quran revealed?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "ফার্সি (Persian)"
+        },
+        {
+          "id": "B",
+          "text_bn": "আরবি (Arabic)"
+        },
+        {
+          "id": "C",
+          "text_bn": "উর্দু (Urdu)"
+        },
+        {
+          "id": "D",
+          "text_bn": "হিব্রু (Hebrew)"
+        }
+      ]
+    }
+  ],
+  "B": [
+    {
+      "id": "b01",
+      "q_bn": "‘রমজান’ শব্দের মূল ধাতু ‘রমদ’ (Ramd)-এর অর্থ কী? (What is the meaning of the root word 'Ramd' from which 'Ramadan' is derived?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "বৃষ্টি (Rain)"
+        },
+        {
+          "id": "B",
+          "text_bn": "প্রচণ্ড উত্তাপ বা দহন (Intense heat or burning)"
+        },
+        {
+          "id": "C",
+          "text_bn": "শান্তি (Peace)"
+        },
+        {
+          "id": "D",
+          "text_bn": "অন্ধকার (Darkness)"
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "q_bn": "বদর যুদ্ধে কোন সাহাবীর তরবারি ভেঙে গেলে রাসুল (সা.) তাকে একটি খেজুরের ডাল দিয়েছিলেন যা তলোয়ারে পরিণত হয়েছিল? (During the Battle of Badr, whose sword broke, and the Prophet PBUH gave him a date branch that turned into a sword?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "উকাশা বিন মিহসান (Ukkashah bin Mihsan)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মুয়াজ বিন জাবাল (Mu'adh bin Jabal)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আবু দুজানা (Abu Dujana)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সা’দ বিন আবি ওয়াক্কাস (Sa'd bin Abi Waqqas)"
+        }
+      ]
+    },
+    {
+      "id": "b03",
+      "q_bn": "কুরআন নাজিলের সময় জিবরাঈল (আ.) মানুষের বেশে এলে সাধারণত কার আকৃতি ধারণ করতেন? (When Jibril AS came in human form during revelation, whose appearance did he usually take?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আবু বকর (রা.) (Abu Bakr RA)"
+        },
+        {
+          "id": "B",
+          "text_bn": "দিহিয়া কালবি (রা.) (Dihyah al-Kalbi RA)"
+        },
+        {
+          "id": "C",
+          "text_bn": "উমর (রা.) (Umar RA)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মুসাব বিন উমায়ের (রা.) (Mus'ab bin Umayr RA)"
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "q_bn": "সাওমের সংজ্ঞায় ‘ইমসাক’ (Imsak) শব্দের পারিভাষিক অর্থ কী? (In the context of Sawm, what is the technical meaning of 'Imsak'?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "পান করা (To drink)"
+        },
+        {
+          "id": "B",
+          "text_bn": "নির্দিষ্ট সময়ে পানাহার ও কামাচার থেকে বিরত থাকা (To abstain from food, drink, and desires at a specific time)"
+        },
+        {
+          "id": "C",
+          "text_bn": "দান করা (To give charity)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কথা বলা বন্ধ করা (To stop talking)"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "q_bn": "বদর যুদ্ধে অংশ নেওয়া মুসলিমদের জন্য আল্লাহ কোন বিশেষ উপাধি বা সম্মান ঘোষণা করেছিলেন? (What special title or honor did Allah announce for the Muslims who participated in Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আশারা মোবাশশারা (Ashara Mubashshara)"
+        },
+        {
+          "id": "B",
+          "text_bn": "আহলে বদর (Ahl-e-Badr)"
+        },
+        {
+          "id": "C",
+          "text_bn": "মুহাজিরুন (Muhajirun)"
+        },
+        {
+          "id": "D",
+          "text_bn": "আনসারুল্লাহ (Ansarullah)"
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "q_bn": "কুরআন মজিদের কোন সূরাটিকে ‘কুরআনের অলঙ্কার’ (Adornment of the Quran) বলা হয়? (Which Surah is called the 'Adornment of the Quran'?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা ইয়াসিন (Surah Ya-Sin)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা রহমান (Surah Ar-Rahman)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা মুলক (Surah Al-Mulk)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা ওয়াকিয়াহ (Surah Al-Waqi'ah)"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "q_bn": "সাওম পালনের মাধ্যমে শরীরের ক্ষতিকর কোষ ধ্বংস হওয়ার প্রক্রিয়াকে বিজ্ঞানের ভাষায় কী বলে? (What is the scientific term for the process where the body destroys harmful cells during fasting?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "মেটাবলিজম (Metabolism)"
+        },
+        {
+          "id": "B",
+          "text_bn": "অটোফ্যাজি (Autophagy)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সালোকসংশ্লেষণ (Photosynthesis)"
+        },
+        {
+          "id": "D",
+          "text_bn": "অক্সিডেশন (Oxidation)"
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "q_bn": "বদর যুদ্ধের দিনটি সপ্তাহে কী বার ছিল? (What day of the week was the Battle of Badr fought on?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "শনিবার (Saturday)"
+        },
+        {
+          "id": "B",
+          "text_bn": "শুক্রবার (Friday)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সোমবার (Monday)"
+        },
+        {
+          "id": "D",
+          "text_bn": "বুধবার (Wednesday)"
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "q_bn": "কুরআনের প্রথম ওহি নাজিলের পর রাসুল (সা.)-কে আশ্বস্ত করতে ওরাকা বিন নওফল কোন নবীর ‘নামুস’ (গোপন বার্তাবাহক)-এর কথা উল্লেখ করেছিলেন? (After the first revelation, Waraqah bin Nawfal mentioned the 'Namus' of which Prophet to reassure the Prophet PBUH?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "ইব্রাহিম (আ.) (Ibrahim AS)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মুসা (আ.) (Musa AS)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ঈসা (আ.) (Isa AS)"
+        },
+        {
+          "id": "D",
+          "text_bn": "নুহ (আ.) (Nuh AS)"
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "q_bn": "রমজান মাসে একটি নফল ইবাদত অন্য মাসে কয়টি ফরজের সমান সওয়াব দেয়? (In Ramadan, one voluntary act equals the reward of how many obligatory acts in other months?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "১০টি (10)"
+        },
+        {
+          "id": "B",
+          "text_bn": "৫০টি (50)"
+        },
+        {
+          "id": "C",
+          "text_bn": "৭০টি (70)"
+        },
+        {
+          "id": "D",
+          "text_bn": "১০০টি (100)"
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "q_bn": "বদর যুদ্ধে কাফেরদের সৈন্যবাহিনীতে ‘আবু জাহল’-এর আসল নাম কী ছিল? (What was the real name of 'Abu Jahl' in the enemy army at Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আমর বিন হিশাম (Amr bin Hisham)"
+        },
+        {
+          "id": "B",
+          "text_bn": "ওতবা বিন রাবিয়াহ (Utbah bin Rabiah)"
+        },
+        {
+          "id": "C",
+          "text_bn": "উমাইয়া বিন খালাফ (Umayyah bin Khalaf)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ওয়ালিদ বিন মুগিরা (Walid bin Mughira)"
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "q_bn": "কুরআন মজিদে কোন সাহাবীর নাম স্পষ্টভাবে উল্লেখ আছে? (Which companion's name is explicitly mentioned in the Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আবু বকর (রা.) (Abu Bakr RA)"
+        },
+        {
+          "id": "B",
+          "text_bn": "জায়েদ বিন হারেসা (রা.) (Zaid bin Harithah RA)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আলী (রা.) (Ali RA)"
+        },
+        {
+          "id": "D",
+          "text_bn": "উমর (রা.) (Umar RA)"
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "q_bn": "‘ফিদইয়া’ (Fidya) কাদের জন্য প্রযোজ্য? (For whom is 'Fidya' applicable?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সক্ষম যুবক (Capable youth)"
+        },
+        {
+          "id": "B",
+          "text_bn": "অতি বৃদ্ধ বা স্থায়ী রোগী যারা রোজা রাখতে অক্ষম (Very old or chronically ill people unable to fast)"
+        },
+        {
+          "id": "C",
+          "text_bn": "মুসাফির (Travelers)"
+        },
+        {
+          "id": "D",
+          "text_bn": "অসতর্ক রোজাদার (Careless fasters)"
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "q_bn": "বদর যুদ্ধে শয়তান মানুষের বেশে এসে কাফেরদের প্ররোচনা দিয়েছিল; সে কার রূপ ধারণ করেছিল? (In Badr, Satan came in human form to instigate the disbelievers; whose form did he take?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আবু জাহল (Abu Jahl)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সুরাকা বিন মালিক (Suraqa bin Malik)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আবু সুফিয়ান (Abu Sufyan)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ওতবা (Utbah)"
+        }
+      ]
+    },
+    {
+      "id": "b15",
+      "q_bn": "কুরআন নাজিলের ইতিহাসে ‘ওহি’র বিরতিকালকে (Fatratul Wahi) অনেকেই কতদিন বা মাস বলে উল্লেখ করেছেন? (In the history of Quran revelation, how long do many specify the gap in revelation/Fatratul Wahi?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "৪ দিন (4 days)"
+        },
+        {
+          "id": "B",
+          "text_bn": "৬ মাস থেকে ৩ বছর (6 months to 3 years)"
+        },
+        {
+          "id": "C",
+          "text_bn": "১০ বছর (10 years)"
+        },
+        {
+          "id": "D",
+          "text_bn": "৪০ দিন (40 days)"
+        }
+      ]
+    },
+    {
+      "id": "b16",
+      "q_bn": "জান্নাতের ‘বাবুল রাইয়ান’ দিয়ে প্রবেশের সময় রোজাদারদের জন্য কোন পানীয়র ব্যবস্থা থাকবে বলে হাদিসে ইঙ্গিত পাওয়া যায়? (What drink is hinted at in Hadith for the fasters entering through 'Bab-ur-Rayyan'?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "মধু (Honey)"
+        },
+        {
+          "id": "B",
+          "text_bn": "দুধ (Milk)"
+        },
+        {
+          "id": "C",
+          "text_bn": "হাউজে কাউসারের পানি (Water of Al-Kawthar)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সাধারণ পানি (Plain water)"
+        }
+      ]
+    },
+    {
+      "id": "b17",
+      "q_bn": "বদর যুদ্ধের প্রাক্কালে রাসুল (সা.) একটি ঘরে (ছাউনি) আল্লাহর কাছে দীর্ঘ সময় প্রার্থনা করেছিলেন; সেই ঘরটির নাম কী ছিল? (Before Badr, the Prophet PBUH prayed for a long time in a hut/shelter; what was it called?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আরিশ (Al-Arish)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সাফা (Safa)"
+        },
+        {
+          "id": "C",
+          "text_bn": "মারওয়া (Marwa)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কুবা (Quba)"
+        }
+      ]
+    },
+    {
+      "id": "b18",
+      "q_bn": "কুরআনের কোন সূরায় ‘বিসমিল্লাহ’ দুইবার এসেছে? (In which Surah does 'Bismillah' appear twice?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা বাকারা (Surah Al-Baqarah)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা নামল (Surah An-Naml)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা তওবা (Surah At-Tawbah)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা ফাতিহা (Surah Al-Fatiha)"
+        }
+      ]
+    },
+    {
+      "id": "b19",
+      "q_bn": "সাওমের আধ্যাত্মিক সুফল হিসেবে ‘নফস’ বা রিপু দমনের স্তর কয়টি? (How many stages of controlling the 'Nafs' are there as a spiritual benefit of Sawm?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "২টি (2)"
+        },
+        {
+          "id": "B",
+          "text_bn": "৩টি (3)"
+        },
+        {
+          "id": "C",
+          "text_bn": "৫টি (5)"
+        },
+        {
+          "id": "D",
+          "text_bn": "৭টি (7)"
+        }
+      ]
+    },
+    {
+      "id": "b20",
+      "q_bn": "বদর যুদ্ধে মুসলিমদের পক্ষে প্রথম শহীদ সাহাবী কে ছিলেন? (Who was the first companion martyred on the Muslim side in the Battle of Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "উবাইদাহ বিন হারিস (Ubaidah bin al-Harith)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মিহজা (রা.) (Mihja RA)"
+        },
+        {
+          "id": "C",
+          "text_bn": "হামজা (রা.) (Hamza RA)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মাসউদ (রা.) (Mas'ud RA)"
+        }
+      ]
+    },
+    {
+      "id": "b21",
+      "q_bn": "কুরআন মাজিদের প্রথম হাফেজ কে ছিলেন? (Who was the first Hafiz/memorizer of the Holy Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আবু বকর (রা.) (Abu Bakr RA)"
+        },
+        {
+          "id": "B",
+          "text_bn": "উসমান (রা.) (Uthman RA)"
+        },
+        {
+          "id": "C",
+          "text_bn": "রাসুলুল্লাহ (সা.) (The Prophet PBUH)"
+        },
+        {
+          "id": "D",
+          "text_bn": "আলী (রা.) (Ali RA)"
+        }
+      ]
+    },
+    {
+      "id": "b22",
+      "q_bn": "ইফতারের সময় যে দোয়াটি পড়া হয় ‘আল্লাহুম্মা লাকা সুমতু...’, এটি মূলত কীসের বহিঃপ্রকাশ? (The prayer 'Allahumma laka sumtu...' recited at Iftar is primarily an expression of what?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "শক্তির (Power)"
+        },
+        {
+          "id": "B",
+          "text_bn": "শোকর বা কৃতজ্ঞতার (Gratitude)"
+        },
+        {
+          "id": "C",
+          "text_bn": "গর্বের (Pride)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ক্ষুধার (Hunger)"
+        }
+      ]
+    },
+    {
+      "id": "b23",
+      "q_bn": "বদর যুদ্ধে মুসলিমদের কাছে মাত্র কয়টি বর্ম (Armor) ছিল? (How many sets of armor did the Muslims have in Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "৬০টি (60)"
+        },
+        {
+          "id": "B",
+          "text_bn": "১০০টি (100)"
+        },
+        {
+          "id": "C",
+          "text_bn": "৩১৩টি (313)"
+        },
+        {
+          "id": "D",
+          "text_bn": "৫০টি (50)"
+        }
+      ]
+    },
+    {
+      "id": "b24",
+      "q_bn": "কুরআন মজিদকে কোন মাসে লাওহে মাহফুজ থেকে বায়তুল ইজ্জাহতে অবতীর্ণ করা হয়? (In which month was the Quran sent down from Lawh-al-Mahfuz to Bayt-ul-Izzah?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "মুহররম (Muharram)"
+        },
+        {
+          "id": "B",
+          "text_bn": "রমজান (Ramadan)"
+        },
+        {
+          "id": "C",
+          "text_bn": "রবিউল আউয়াল (Rabi-ul-Awwal)"
+        },
+        {
+          "id": "D",
+          "text_bn": "জিলহজ (Dhul-Hijjah)"
+        }
+      ]
+    },
+    {
+      "id": "b25",
+      "q_bn": "সাওম ভঙ্গকারী ব্যক্তির জন্য ‘কাজা’ ও ‘কাফফারা’র মধ্যে পার্থক্য কী? (What is the difference between 'Qaza' and 'Kaffarah' for someone who breaks their fast?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "কাজা হলো ১টির বদলে ১টি, কাফফারা হলো ১টির বদলে ৬০টি (Qaza is 1 for 1, Kaffarah is 60 for 1)"
+        },
+        {
+          "id": "B",
+          "text_bn": "কোনো পার্থক্য নেই (No difference)"
+        },
+        {
+          "id": "C",
+          "text_bn": "কাজা ধনীরা দেয়, কাফফারা গরিবরা (Qaza is for rich, Kaffarah for poor)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কোনোটিই নয় (None)"
+        }
+      ]
+    },
+    {
+      "id": "b26",
+      "q_bn": "বদর যুদ্ধে রাসুল (সা.)-এর সাথে থাকা প্রধান সেনাপতি বা উপদেষ্টা মন্ডলীর মধ্যে আনসারদের নেতা কে ছিলেন? (Who was the leader of the Ansar among the chief advisors with the Prophet PBUH at Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সা’দ বিন মুয়াজ (Sa'd bin Mu'adh)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সা’দ বিন উবাদাহ (Sa'd bin Ubadah)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আবু আইয়ুব আনসারী (Abu Ayyub al-Ansari)"
+        },
+        {
+          "id": "D",
+          "text_bn": "জাবের বিন আব্দুল্লাহ (Jabir bin Abdullah)"
+        }
+      ]
+    },
+    {
+      "id": "b27",
+      "q_bn": "কুরআনের কোন সূরাটি নাজিলের সময় ৭০ হাজার ফেরেশতা সাথে এসেছিলেন বলে বর্ণিত আছে? (Which Surah is reported to have been revealed accompanied by 70,000 angels?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা আনআম (Surah Al-An'am)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা ইয়াসিন (Surah Ya-Sin)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা ফাতিহা (Surah Al-Fatiha)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা নাস (Surah An-Nas)"
+        }
+      ]
+    },
+    {
+      "id": "b28",
+      "q_bn": "‘সাওম’ পালনের ক্ষেত্রে সূর্যোদয় থেকে সূর্যাস্ত পর্যন্ত পানাহার ত্যাগ করা কোন ধরনের বিধান? (What kind of ruling is abstaining from food and drink from sunrise to sunset during Sawm?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "রুকন বা স্তম্ভ (Pillar)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মুস্তাহাব (Recommended)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ওয়াজিব (Obligatory)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মাকরূহ (Disliked)"
+        }
+      ]
+    },
+    {
+      "id": "b29",
+      "q_bn": "বদর যুদ্ধে কাফেরদের মধ্যে কে রাসুল (সা.)-এর সাথে ব্যক্তিগত দ্বন্দ্বে লিপ্ত হতে চেয়েও শেষ পর্যন্ত নিহত হয়? (Among the disbelievers in Badr, who wanted to engage in a personal duel with the Prophet PBUH but was eventually killed?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আবু জাহল (Abu Jahl)"
+        },
+        {
+          "id": "B",
+          "text_bn": "উমাইয়া বিন খালাফ (Umayyah bin Khalaf)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ওতবা বিন রাবিয়াহ (Utbah bin Rabiah)"
+        },
+        {
+          "id": "D",
+          "text_bn": "শায়বা (Shaibah)"
+        }
+      ]
+    },
+    {
+      "id": "b30",
+      "q_bn": "কুরআন নাজিলের প্রথম পর্যায়ে মাক্কি জীবনে প্রধানত কোন বিষয়টি আলোচিত হয়েছে? (In the first stage of Quranic revelation during the Makki period, what was primarily discussed?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "উত্তরাধিকার আইন (Inheritance laws)"
+        },
+        {
+          "id": "B",
+          "text_bn": "ইমান ও পরকাল (Faith and the Hereafter)"
+        },
+        {
+          "id": "C",
+          "text_bn": "বিবাহ পদ্ধতি (Marriage methods)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ব্যবসা-বাণিজ্য (Trade and commerce)"
+        }
+      ]
+    },
+    {
+      "id": "b31",
+      "q_bn": "বদর যুদ্ধে মুসলিমদের পানি সরবরাহ ব্যবস্থার দায়িত্ব কার ওপর ছিল? (Who was responsible for the water supply system of the Muslims in Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আলী (রা.) (Ali RA)"
+        },
+        {
+          "id": "B",
+          "text_bn": "কায়েস বিন আবি সা’সা (Qays bin Abi Sa'sa'ah)"
+        },
+        {
+          "id": "C",
+          "text_bn": "উমর (রা.) (Umar RA)"
+        },
+        {
+          "id": "D",
+          "text_bn": "বিলাল (রা.) (Bilal RA)"
+        }
+      ]
+    },
+    {
+      "id": "b32",
+      "q_bn": "কুরআন মজিদের কোন সূরাটি ‘কুরআনের এক-তৃতীয়াংশ’ (One-third of the Quran) এর সমান? (Which Surah is equal to 'one-third of the Quran'?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা ফালাক (Surah Al-Falaq)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা ইখলাস (Surah Al-Ikhlas)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা কাওসার (Surah Al-Kawthar)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা তওবা (Surah At-Tawbah)"
+        }
+      ]
+    },
+    {
+      "id": "b33",
+      "q_bn": "সাওমের ক্ষেত্রে ‘সাওমে বিসাল’ (Saum-e-Wisal) কোনটি যা রাসুল (সা.) নিষেধ করেছেন? (Regarding Sawm, what is 'Saum-e-Wisal' which the Prophet PBUH forbade?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সোমবারের রোজা (Monday fast)"
+        },
+        {
+          "id": "B",
+          "text_bn": "ইফতার না করে টানা রোজা রাখা (Fasting continuously without breaking Iftar)"
+        },
+        {
+          "id": "C",
+          "text_bn": "শুধু শুক্রবার রোজা (Fasting only on Friday)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ভ্রমণের রোজা (Fasting while traveling)"
+        }
+      ]
+    },
+    {
+      "id": "b34",
+      "q_bn": "বদর যুদ্ধে জিবরাঈল (আ.)-এর নেতৃত্বে কত হাজার ফেরেশতা অবতীর্ণ হয়েছিলেন? (How many thousand angels descended under the leadership of Jibril AS in Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "১ হাজার (1,000)"
+        },
+        {
+          "id": "B",
+          "text_bn": "৩ হাজার (3,000)"
+        },
+        {
+          "id": "C",
+          "text_bn": "৫ হাজার (5,000)"
+        },
+        {
+          "id": "D",
+          "text_bn": "১০ হাজার (10,000)"
+        }
+      ]
+    },
+    {
+      "id": "b35",
+      "q_bn": "ওহি নাজিলের সময় রাসুল (সা.) দ্রুত শব্দগুলো আওড়াতেন যেন ভুলে না যান; তখন আল্লাহ কোন আয়াত নাজিল করে শান্ত করেন? (The Prophet PBUH used to repeat words quickly during revelation so as not to forget; which verse did Allah reveal to calm him?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা কিয়ামাহ, আয়াত ১৬ (Surah Al-Qiyamah, Verse 16)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা বাকারা, আয়াত ১ (Surah Al-Baqarah, Verse 1)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা ফাতহ (Surah Al-Fath)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা নসর (Surah An-Nasr)"
+        }
+      ]
+    },
+    {
+      "id": "b36",
+      "q_bn": "সাওম পালনের ফলে মানুষের চরিত্রে কোন বিশেষ গুণের চর্চা হয়? (What special quality is practiced in human character as a result of Sawm?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "দম্ভ (Pride)"
+        },
+        {
+          "id": "B",
+          "text_bn": "আমানতদারি ও সত্যবাদিতা (Honesty and Truthfulness)"
+        },
+        {
+          "id": "C",
+          "text_bn": "রাগ (Anger)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কৃপণতা (Miserliness)"
+        }
+      ]
+    },
+    {
+      "id": "b37",
+      "q_bn": "বদর যুদ্ধে বন্দী ‘সুহাইল বিন আমর’ কেন বিখ্যাত ছিলেন? (Why was the Badr prisoner 'Suhayl bin Amr' famous?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "তার শক্তির জন্য (For his strength)"
+        },
+        {
+          "id": "B",
+          "text_bn": "তার বাগ্মিতা বা বক্তব্যের জাদুর জন্য (For his eloquence or magic of speech)"
+        },
+        {
+          "id": "C",
+          "text_bn": "তার সম্পদের জন্য (For his wealth)"
+        },
+        {
+          "id": "D",
+          "text_bn": "তার তরবারির জন্য (For his sword)"
+        }
+      ]
+    },
+    {
+      "id": "b38",
+      "q_bn": "কুরআন মজিদে ‘মাদানি’ সূরাগুলোর প্রধান আলোচ্য বিষয় কোনটি? (What is the primary subject of 'Madani' Surahs in the Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "ইবাদত ও সমাজ ব্যবস্থা (Worship and social system)"
+        },
+        {
+          "id": "B",
+          "text_bn": "প্রাচীন ইতিহাস (Ancient history)"
+        },
+        {
+          "id": "C",
+          "text_bn": "বিজ্ঞান (Science)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মক্কার বর্ণনা (Description of Makkah)"
+        }
+      ]
+    },
+    {
+      "id": "b39",
+      "q_bn": "ইফতারের সময় খেজুর না থাকলে রাসুল (সা.) কী দিয়ে রোজা ভাঙার পরামর্শ দিয়েছেন? (If dates are not available at Iftar, what did the Prophet PBUH suggest to break the fast with?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "দুধ (Milk)"
+        },
+        {
+          "id": "B",
+          "text_bn": "পানি (Water)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ফল (Fruit)"
+        },
+        {
+          "id": "D",
+          "text_bn": "লবণ (Salt)"
+        }
+      ]
+    },
+    {
+      "id": "b40",
+      "q_bn": "বদর যুদ্ধকে ‘বদর’ বলা হয় কেন? (Why is the Battle of Badr called 'Badr'?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "এটি বদর নামক ব্যক্তির জমিতে হয়েছিল (It happened on the land of a person named Badr)"
+        },
+        {
+          "id": "B",
+          "text_bn": "এটি বদর নামক স্থানে একটি কুয়োর কাছে হয়েছিল (It happened near a well in a place named Badr)"
+        },
+        {
+          "id": "C",
+          "text_bn": "এটি পূর্ণিমার রাতে হয়েছিল (It happened on a full moon night)"
+        },
+        {
+          "id": "D",
+          "text_bn": "এর কোনো অর্থ নেই (It has no meaning)"
+        }
+      ]
+    },
+    {
+      "id": "b41",
+      "q_bn": "কুরআনের কোন সূরায় বদর যুদ্ধের দিনের মুসলিমদের ‘অল্প সংখ্যা’র কথা উল্লেখ আছে? (In which Surah is the 'small number' of Muslims on the day of Badr mentioned?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা আল-ইমরান (Surah Al-Imran)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা নিসা (Surah An-Nisa)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা মায়িদা (Surah Al-Ma'idah)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা হজ্জ (Surah Al-Hajj)"
+        }
+      ]
+    },
+    {
+      "id": "b42",
+      "q_bn": "সাওমের ক্ষেত্রে ‘নিয়াত’ (Intention) করা কখন জরুরি? (When is 'Niyyah' or intention necessary for Sawm?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূর্য উঠার পর (After sunrise)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সুবহে সাদিকের আগে (Before dawn)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ইফতারের সময় (At Iftar)"
+        },
+        {
+          "id": "D",
+          "text_bn": "যে কোনো সময় (Anytime)"
+        }
+      ]
+    },
+    {
+      "id": "b43",
+      "q_bn": "বদর যুদ্ধে মুসলিমদের জয়ে মক্কার কুরাইশদের মধ্যে কে মানসিকভাবে সবথেকে বেশি ভেঙে পড়েছিলেন? (Who among the Quraish of Makkah was most mentally broken by the Muslim victory at Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আবু জাহল (Abu Jahl)"
+        },
+        {
+          "id": "B",
+          "text_bn": "আবু লাহাব (Abu Lahab - who died shortly after from grief/illness)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আবু সুফিয়ান (Abu Sufyan)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ওতবা (Utbah)"
+        }
+      ]
+    },
+    {
+      "id": "b44",
+      "q_bn": "কুরআন মাজিদকে ‘আল-হুদা’ (Al-Huda) বলা হয় কেন? (Why is the Quran called 'Al-Huda'?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "এটি পথপ্রদর্শক (It is a guide)"
+        },
+        {
+          "id": "B",
+          "text_bn": "এটি অনেক বড় (It is very large)"
+        },
+        {
+          "id": "C",
+          "text_bn": "এটি আরবিতে (It is in Arabic)"
+        },
+        {
+          "id": "D",
+          "text_bn": "এটি প্রাচীন (It is ancient)"
+        }
+      ]
+    },
+    {
+      "id": "b45",
+      "q_bn": "সাওম অবস্থায় সিওয়াক (মিসওয়াক) করার বিধান কী? (What is the ruling on using Siwak/Miswak while fasting?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "জায়েজ বা সুন্নাত (Permissible or Sunnah)"
+        },
+        {
+          "id": "B",
+          "text_bn": "হারাম (Forbidden)"
+        },
+        {
+          "id": "C",
+          "text_bn": "মাকরূহ (Disliked)"
+        },
+        {
+          "id": "D",
+          "text_bn": "রোজা ভেঙে যায় (Breaks the fast)"
+        }
+      ]
+    },
+    {
+      "id": "b46",
+      "q_bn": "বদর যুদ্ধের পর বন্দীদের শিক্ষার বিনিময়ে মুক্তি দেওয়ার সিদ্ধান্তটি কার ছিল? (Whose decision was it to release the Badr prisoners in exchange for education?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "আবু বকর (রা.) (Abu Bakr RA)"
+        },
+        {
+          "id": "B",
+          "text_bn": "রাসুলুল্লাহ (সা.) (The Prophet PBUH)"
+        },
+        {
+          "id": "C",
+          "text_bn": "উমর (রা.) (Umar RA)"
+        },
+        {
+          "id": "D",
+          "text_bn": "আলী (রা.) (Ali RA)"
+        }
+      ]
+    },
+    {
+      "id": "b47",
+      "q_bn": "কুরআনের কোন পারা থেকে ‘মাদানি’ সূরাগুলোর আধিক্য শুরু হয়? (From which Para/Juz does the predominance of Madani Surahs begin?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "১ম পারা (1st Para)"
+        },
+        {
+          "id": "B",
+          "text_bn": "১০ম পারা (10th Para)"
+        },
+        {
+          "id": "C",
+          "text_bn": "২৬তম পারা (26th Para)"
+        },
+        {
+          "id": "D",
+          "text_bn": "৩০তম পারা (30th Para)"
+        }
+      ]
+    },
+    {
+      "id": "b48",
+      "q_bn": "সাওমের সময় ‘লাইলাতুল কদর’ তালাশ করার সঠিক সময় কোনটি? (What is the correct time to seek 'Lailatul Qadr' during Sawm?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "রমজানের শেষ দশকের বিজোড় রাতগুলো (Odd nights of the last ten days of Ramadan)"
+        },
+        {
+          "id": "B",
+          "text_bn": "শুধু ২৭শে রমজান (Only 27th Ramadan)"
+        },
+        {
+          "id": "C",
+          "text_bn": "প্রথম দশ দিন (First ten days)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সারা বছর (Whole year)"
+        }
+      ]
+    },
+    {
+      "id": "b49",
+      "q_bn": "বদর যুদ্ধের ফলে আরবের কোন প্রভাবশালী গোত্রের দাপট কমে গিয়েছিল? (As a result of Badr, which influential tribe's dominance decreased?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "খাযরাজ (Khazraj)"
+        },
+        {
+          "id": "B",
+          "text_bn": "কুরাইশ (Quraish)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আউস (Aws)"
+        },
+        {
+          "id": "D",
+          "text_bn": "বনু কুরাইজা (Banu Qurayza)"
+        }
+      ]
+    },
+    {
+      "id": "b50",
+      "q_bn": "কুরআন মাজিদ সংরক্ষণে ‘জায়েদ বিন সাবিত’ (রা.)-এর ভূমিকা কী ছিল? (What was the role of Zaid bin Thabit RA in preserving the Quran?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "তিনি প্রথম হাফেজ ছিলেন (He was the first Hafiz)"
+        },
+        {
+          "id": "B",
+          "text_bn": "তিনি প্রধান সংকলক ছিলেন (He was the chief compiler)"
+        },
+        {
+          "id": "C",
+          "text_bn": "তিনি যুদ্ধ করেছিলেন (He fought in battles)"
+        },
+        {
+          "id": "D",
+          "text_bn": "তিনি মক্কায় থাকতেন (He lived in Makkah)"
+        }
+      ]
+    },
+    {
+      "id": "b51",
+      "q_bn": "সাওম পালনকারীর জন্য ইফতারির সময় দোয়া কবুল হওয়ার গ্যারান্টি কে দিয়েছেন? (Who gave the guarantee of acceptance of prayers at the time of Iftar for the faster?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "ফেরেশতা (Angels)"
+        },
+        {
+          "id": "B",
+          "text_bn": "স্বয়ং আল্লাহ (Allah Himself - via Hadith of the Prophet)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সাহাবীগণ (Companions)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কেউ না (No one)"
+        }
+      ]
+    },
+    {
+      "id": "b52",
+      "q_bn": "বদর যুদ্ধে মুসলিমদের শিবিরে উমর (রা.)-এর কোন নিকটাত্মীয় কাফেরদের পক্ষে যুদ্ধে নিহত হন? (Which close relative of Umar RA was killed fighting for the disbelievers at Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "তার বাবা (His father)"
+        },
+        {
+          "id": "B",
+          "text_bn": "তার মামা ‘আসী বিন হিশাম’ (His maternal uncle Asi bin Hisham)"
+        },
+        {
+          "id": "C",
+          "text_bn": "তার ভাই (His brother)"
+        },
+        {
+          "id": "D",
+          "text_bn": "তার ছেলে (His son)"
+        }
+      ]
+    },
+    {
+      "id": "b53",
+      "q_bn": "কুরআন নাজিলের সময় রাসুল (সা.)-এর হৃদয়ে ওহি গেঁথে দেওয়ার দায়িত্ব কার ছিল? (Whose responsibility was it to engrave the revelation in the Prophet's heart?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "জিবরাঈল (আ.) (Jibril AS)"
+        },
+        {
+          "id": "B",
+          "text_bn": "স্বয়ং আল্লাহ (Allah Himself - Verse: 'Sanuqri'uka fala tansa')"
+        },
+        {
+          "id": "C",
+          "text_bn": "আবু বকর (রা.) (Abu Bakr RA)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কেউ না (No one)"
+        }
+      ]
+    },
+    {
+      "id": "b54",
+      "q_bn": "রমজানে ওমরাহ করা অন্য মাসে কীসের সমান সওয়াব? (Performing Umrah in Ramadan is equal to the reward of what in other months?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "একটি হজের সমান (Equal to a Hajj)"
+        },
+        {
+          "id": "B",
+          "text_bn": "১০০ নফলের সমান (Equal to 100 Nafl)"
+        },
+        {
+          "id": "C",
+          "text_bn": "একটি যুদ্ধের সমান (Equal to a battle)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কোনোটিই নয় (None)"
+        }
+      ]
+    },
+    {
+      "id": "b55",
+      "q_bn": "বদর যুদ্ধে কাফেরদের সৈন্যবাহিনীতে ‘আবু সুফিয়ান’-এর কাফেলায় কতজন লোক ছিল? (How many people were in Abu Sufyan's caravan in Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "১০-২০ জন (10-20)"
+        },
+        {
+          "id": "B",
+          "text_bn": "৩০-৪০ জন (30-40)"
+        },
+        {
+          "id": "C",
+          "text_bn": "১০০ জন (100)"
+        },
+        {
+          "id": "D",
+          "text_bn": "১০০০ জন (1000)"
+        }
+      ]
+    },
+    {
+      "id": "b56",
+      "q_bn": "কুরআনের কোন সূরাটি ‘কুরআনের হৃদয়’ (Heart of the Quran) হিসেবে পরিচিত? (Which Surah is known as the 'Heart of the Quran'?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সূরা রহমান (Surah Ar-Rahman)"
+        },
+        {
+          "id": "B",
+          "text_bn": "সূরা ইয়াসিন (Surah Ya-Sin)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সূরা ফাতিহা (Surah Al-Fatiha)"
+        },
+        {
+          "id": "D",
+          "text_bn": "সূরা মুলক (Surah Al-Mulk)"
+        }
+      ]
+    },
+    {
+      "id": "b57",
+      "q_bn": "সাওম অবস্থায় অনিচ্ছাকৃতভাবে বমি হলে রোজার হুকুম কী? (What is the ruling if one vomits unintentionally while fasting?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "রোজা ভেঙে যায় (Fast breaks)"
+        },
+        {
+          "id": "B",
+          "text_bn": "রোজা ভাঙবে না (Fast does not break)"
+        },
+        {
+          "id": "C",
+          "text_bn": "কাফফারা দিতে হবে (Must give expiation)"
+        },
+        {
+          "id": "D",
+          "text_bn": "মাকরূহ হবে (Will be disliked)"
+        }
+      ]
+    },
+    {
+      "id": "b58",
+      "q_bn": "বদর যুদ্ধে ‘আলী (রা.)’ এবং ‘হামজা (রা.)’ কোন রঙের পাগড়ি বা চিহ্ন ব্যবহার করেছিলেন? (What color of turban or mark did Ali RA and Hamza RA use in Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "সাদা ও হলুদ (White and Yellow)"
+        },
+        {
+          "id": "B",
+          "text_bn": "কালো ও লাল (Black and Red)"
+        },
+        {
+          "id": "C",
+          "text_bn": "সবুজ (Green)"
+        },
+        {
+          "id": "D",
+          "text_bn": "নীল (Blue)"
+        }
+      ]
+    },
+    {
+      "id": "b59",
+      "q_bn": "কুরআন নাজিলের চূড়ান্ত লক্ষ্য কী? (What is the ultimate goal of Quranic revelation?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "শুধু তেলাওয়াত করা (Only to recite)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মানবজাতির হেদায়েত ও ইহ-পরকালীন কল্যাণ (Guidance of mankind and worldly/afterlife success)"
+        },
+        {
+          "id": "C",
+          "text_bn": "ঘর সাজানো (To decorate the house)"
+        },
+        {
+          "id": "D",
+          "text_bn": "ইতিহাস জানা (To know history)"
+        }
+      ]
+    },
+    {
+      "id": "b60",
+      "q_bn": "বদর যুদ্ধের বিজয় পরবর্তী মদিনার মুসলিম সমাজে কোন শ্রেণির উত্থান ঘটেছিল? (Which group emerged in the Muslim society of Madinah after the victory of Badr?)",
+      "q_en": "",
+      "options": [
+        {
+          "id": "A",
+          "text_bn": "মুহাজির (Muhajir)"
+        },
+        {
+          "id": "B",
+          "text_bn": "মুনাফিক (Hypocrites - who became fearful and outward Muslims)"
+        },
+        {
+          "id": "C",
+          "text_bn": "আনসার (Ansar)"
+        },
+        {
+          "id": "D",
+          "text_bn": "কাফের (Disbelievers)"
+        }
+      ]
+    }
+  ]
+}
