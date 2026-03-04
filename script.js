@@ -1,11 +1,25 @@
 // ============================================================
 //  Ramadan Genius — Quiz Competition Script
-//  ফুলকুঁড়ি আশার ঝিঙ্গেফুল
+//  ফুলকুঁড়ি আসর ঝিঙ্গেফুল
 // ============================================================
 
 // ====== CONFIG ======
-const APPS_SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
-const SECRET = "CHANGE_THIS_TO_A_LONG_RANDOM_STRING";
+// Add all your Apps Script Web App URLs here (1 to 3 accounts)
+// Each URL is a deployed Web App from a different Google account
+const APPS_SCRIPT_URLS = [
+  "https://script.google.com/macros/s/AKfycbwvkQWAVqYVbBkLPI1My7R7kSv9jrhKYG9axgQ74Q_bXRtnYNaHgbuNgA6EHZd2uMcokA/exec",
+  // "PASTE_URL_FROM_GOOGLE_ACCOUNT_2",  // uncomment when ready
+  // "PASTE_URL_FROM_GOOGLE_ACCOUNT_3",  // uncomment when ready
+];
+const SECRET = "rg2026_phulkuri_secretKey99";
+
+// Pick a random endpoint for each submission (load balancing)
+let _submitCounter = 0;
+function getNextEndpoint() {
+  const url = APPS_SCRIPT_URLS[_submitCounter % APPS_SCRIPT_URLS.length];
+  _submitCounter++;
+  return url;
+}
 
 const SECONDS_PER_QUESTION = 20;
 const TOTAL_QUESTIONS = 60;
@@ -506,7 +520,7 @@ function submitToSheet(payload) {
     const form = $("submitForm");
     $("secretField").value = SECRET;
     $("payloadField").value = JSON.stringify(payload);
-    form.action = APPS_SCRIPT_URL;
+    form.action = getNextEndpoint();
 
     const iframe = $("hiddenFrame");
     let done = false;

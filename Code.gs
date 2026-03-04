@@ -5,7 +5,7 @@
 
 // ========= CONFIG =========
 const SHEET_NAME = "Responses";
-const SECRET = "CHANGE_THIS_TO_A_LONG_RANDOM_STRING";
+const SECRET = "rg2026_phulkuri_secretKey99";
 
 // Server-side contest window (Asia/Dhaka)
 const CONTEST_START = new Date("2026-03-07T10:00:00+06:00");

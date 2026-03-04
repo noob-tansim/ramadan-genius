@@ -1,6 +1,6 @@
 # Ramadan Genius 🌙 — রমজান জিনিয়াস
 
-**Quiz Competition Platform — ফুলকুঁড়ি আশার ঝিঙ্গেফুল**
+**Quiz Competition Platform — ফুলকুঁড়ি আসর ঝিঙ্গেফুল**
 
 A free, static-site quiz competition for 800–1,000 students over 2 days, using Google Sheets as the backend.
 
@@ -214,4 +214,4 @@ If you want it live immediately:
 4. Enable **GitHub Pages** from `main` branch.
 5. Open the Pages URL in an incognito window and do one full test submission.
 
-**Built for Ramadan Genius — ফুলকুঁড়ি আশার ঝিঙ্গেফুল** 🌙
+**Built for Ramadan Genius — ফুলকুঁড়ি আসর ঝিঙ্গেফুল** 🌙
