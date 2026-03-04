@@ -5,299 +5,315 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ramadan Genius — রমজান জিনিয়াস</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Tiro+Bangla:ital@0;1&family=Noto+Sans+Bengali:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ===== RESET & GLOBAL ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d1b2a;
-      --card: #1b2838;
-      --card-border: #2e4057;
+      --bg: #0a0f1a;
+      --card: #131b2e;
+      --card-border: #1e2d4a;
       --gold: #f5c518;
       --gold-dim: #c9a710;
       --green: #2ecc71;
       --red: #e74c3c;
       --text: #ecf0f1;
-      --muted: #95a5a6;
+      --muted: #8ea0b6;
       --accent: #1abc9c;
-      --radius: 14px;
+      --radius: 16px;
     }
 
     body {
-      font-family: 'Poppins', 'Noto Sans Bengali', sans-serif;
+      font-family: 'Hind Siliguri', 'Poppins', 'Noto Sans Bengali', sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 12px;
+      padding: 0 12px 24px;
+      overflow-x: hidden;
     }
 
-    /* ===== HEADER / BRANDING ===== */
+    /* Animated starfield background */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(1.5px 1.5px at 10% 20%, rgba(255,255,255,.25) 50%, transparent 100%),
+        radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,.2) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,.15) 50%, transparent 100%),
+        radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,.2) 50%, transparent 100%),
+        radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,.18) 50%, transparent 100%),
+        radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,.2) 50%, transparent 100%);
+      pointer-events: none; z-index: 0;
+      animation: twinkle 4s ease-in-out infinite alternate;
+    }
+    @keyframes twinkle { 0%{opacity:.5} 100%{opacity:1} }
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+    @keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+    /* BRANDING */
     .brand {
       text-align: center;
-      margin: 18px 0 8px;
+      margin: 20px 0 6px;
+      animation: fadeIn 0.8s ease-out;
+      position: relative; z-index: 1;
+    }
+    .brand-logo {
+      width: 180px; height: auto;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 2px 12px rgba(245,197,24,.25));
+      animation: float 3s ease-in-out infinite;
     }
     .brand h1 {
-      font-size: 2rem;
-      color: var(--gold);
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem; font-weight: 700;
       letter-spacing: 1px;
+      background: linear-gradient(90deg, #f5c518, #ffd95c, #f5c518);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
     }
     .brand .subtitle {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-    .brand .crescent {
-      font-size: 3rem;
-      display: block;
-      margin-bottom: 4px;
+      font-family: 'Tiro Bangla', serif;
+      font-size: 1.15rem; color: var(--muted);
+      margin-top: 2px; letter-spacing: 1px;
     }
     .brand .powered-by {
-      font-size: 0.75rem;
-      color: var(--accent);
-      margin-top: 4px;
-      letter-spacing: 0.5px;
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 0.82rem; color: var(--accent);
+      margin-top: 6px; opacity: 0.85;
     }
 
-    /* ===== CARD ===== */
+    /* CARD */
     .card {
       background: var(--card);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
-      padding: 22px 20px;
+      padding: 24px 22px;
       margin-bottom: 14px;
-      width: 100%;
-      max-width: 600px;
-      box-shadow: 0 4px 20px rgba(0,0,0,.35);
+      width: 100%; max-width: 620px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.45);
+      position: relative; z-index: 1;
+      animation: fadeInUp 0.6s ease-out both;
     }
-    .card h2 {
-      color: var(--gold);
-      margin-bottom: 10px;
-      font-size: 1.35rem;
+    .card h2 { color: var(--gold); margin-bottom: 10px; font-size: 1.35rem; }
+
+    /* GATE / LANDING */
+    .gate-card { text-align: center; }
+    .gate-card h2 { font-family: 'Tiro Bangla', serif; margin-bottom: 10px; }
+
+    .landing-salam {
+      font-family: 'Tiro Bangla', serif;
+      font-size: 1.05rem; color: var(--accent);
+      margin-bottom: 12px; line-height: 1.6;
+    }
+    .landing-desc {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 0.92rem; color: var(--muted);
+      line-height: 1.75; margin-bottom: 16px;
+      text-align: left;
+    }
+    .landing-rules {
+      text-align: left;
+      background: rgba(26,188,156,.06);
+      border: 1px solid rgba(26,188,156,.18);
+      border-radius: 12px;
+      padding: 14px 16px; margin-bottom: 16px;
+    }
+    .landing-rules h3 {
+      font-family: 'Tiro Bangla', serif;
+      color: var(--gold); font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .landing-rules ul { list-style: none; padding: 0; }
+    .landing-rules li {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 0.85rem; color: var(--text);
+      line-height: 1.65; padding: 4px 0 4px 18px;
+      position: relative;
+    }
+    .landing-rules li::before {
+      content: '\2726'; position: absolute; left: 0;
+      color: var(--gold); font-size: 0.7rem; top: 6px;
     }
 
-    /* ===== FORM FIELDS ===== */
-    .field { margin-bottom: 10px; }
-    .field label {
-      display: block;
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 3px;
+    .syllabus-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; margin-bottom: 16px;
     }
+    .syllabus-box {
+      background: rgba(245,197,24,.04);
+      border: 1px solid rgba(245,197,24,.15);
+      border-radius: 10px; padding: 12px 14px;
+      text-align: left;
+    }
+    .syllabus-box h4 {
+      font-family: 'Tiro Bangla', serif;
+      color: var(--gold); font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+    .syllabus-box p {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .gate-message {
+      color: var(--muted); line-height: 1.6;
+      margin-bottom: 10px; font-size: 14px;
+    }
+    .countdown {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 2px;
+      margin: 8px 0 10px;
+      animation: pulse 2s ease-in-out infinite;
+      text-shadow: 0 0 20px rgba(245,197,24,.3);
+    }
+    .schedule-line {
+      font-size: 0.82rem; color: var(--muted);
+      line-height: 1.5; margin-bottom: 14px;
+    }
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--card-border), transparent);
+      margin: 14px 0;
+    }
+
+    /* FORM */
+    .field { margin-bottom: 10px; }
+    .field label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 3px; }
     .field input, .field select {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid var(--card-border);
-      background: #162231;
-      color: var(--text);
-      font-size: 15px;
-      font-family: inherit;
-      outline: none;
-      transition: border .2s;
+      width: 100%; padding: 10px 12px;
+      border-radius: 8px; border: 1px solid var(--card-border);
+      background: #0e1726; color: var(--text);
+      font-size: 15px; font-family: inherit;
+      outline: none; transition: border .25s, box-shadow .25s;
     }
     .field input:focus, .field select:focus {
       border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(245,197,24,.1);
     }
-
     .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 
-    /* ===== CATEGORY PICKER ===== */
+    /* CATEGORY */
     .cat-picker { display: flex; gap: 10px; margin: 10px 0; }
     .cat-btn {
-      flex: 1;
-      padding: 14px 10px;
-      border-radius: 10px;
-      border: 2px solid var(--card-border);
-      background: transparent;
-      color: var(--text);
-      font-size: 14px;
-      font-family: inherit;
-      cursor: pointer;
-      text-align: center;
-      transition: all .2s;
+      flex: 1; padding: 14px 10px;
+      border-radius: 10px; border: 2px solid var(--card-border);
+      background: transparent; color: var(--text);
+      font-size: 14px; font-family: inherit;
+      cursor: pointer; text-align: center;
+      transition: all .25s;
     }
-    .cat-btn:hover { border-color: var(--gold-dim); }
+    .cat-btn:hover { border-color: var(--gold-dim); transform: translateY(-1px); }
     .cat-btn.active {
       border-color: var(--gold);
-      background: rgba(245,197,24,.1);
+      background: rgba(245,197,24,.08);
+      box-shadow: 0 0 16px rgba(245,197,24,.1);
     }
     .cat-btn .cat-title { font-weight: 700; font-size: 15px; display: block; color: var(--gold); }
     .cat-btn .cat-desc { font-size: 12px; color: var(--muted); display: block; margin-top: 4px; }
 
-    /* ===== BUTTONS ===== */
+    /* BUTTONS */
     .btn-primary {
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      border: none;
-      background: var(--gold);
-      color: #000;
-      font-weight: 700;
-      font-size: 16px;
-      font-family: inherit;
-      cursor: pointer;
-      margin-top: 8px;
-      transition: background .2s;
+      width: 100%; padding: 14px;
+      border-radius: 10px; border: none;
+      background: linear-gradient(135deg, #f5c518, #e0a800);
+      color: #000; font-weight: 700; font-size: 16px;
+      font-family: inherit; cursor: pointer;
+      margin-top: 8px; transition: all .25s;
+      box-shadow: 0 4px 16px rgba(245,197,24,.2);
     }
-    .btn-primary:hover { background: var(--gold-dim); }
-    .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+    .btn-primary:hover { background: linear-gradient(135deg, #e0a800, #c99700); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(245,197,24,.3); }
+    .btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
 
     .btn-next {
-      padding: 12px 28px;
-      border-radius: 10px;
-      border: none;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 700;
-      font-size: 15px;
-      font-family: inherit;
-      cursor: pointer;
-      transition: background .2s;
+      padding: 12px 28px; border-radius: 10px; border: none;
+      background: var(--accent); color: #fff; font-weight: 700;
+      font-size: 15px; font-family: inherit; cursor: pointer;
+      transition: all .25s;
     }
-    .btn-next:hover { background: #17a589; }
+    .btn-next:hover { background: #17a589; transform: translateY(-1px); }
 
     .btn-retry {
-      padding: 12px 28px;
-      border-radius: 10px;
-      border: 2px solid var(--gold);
-      background: transparent;
-      color: var(--gold);
-      font-weight: 600;
-      font-size: 15px;
-      font-family: inherit;
-      cursor: pointer;
-      margin-top: 10px;
+      padding: 12px 28px; border-radius: 10px;
+      border: 2px solid var(--gold); background: transparent;
+      color: var(--gold); font-weight: 600; font-size: 15px;
+      font-family: inherit; cursor: pointer; margin-top: 10px;
+      transition: all .25s;
     }
+    .btn-retry:hover { background: rgba(245,197,24,.08); }
 
-    /* ===== QUIZ TOP BAR ===== */
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-    }
+    /* QUIZ TOP BAR */
+    .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
     .progress-text { font-size: 14px; color: var(--muted); }
-    .timer-box {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 16px;
-      font-weight: 700;
-    }
+    .timer-box { display: flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 700; }
     .timer-circle {
-      width: 44px; height: 44px;
-      border-radius: 50%;
+      width: 44px; height: 44px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 18px; font-weight: 700;
-      border: 3px solid var(--green);
-      color: var(--green);
+      border: 3px solid var(--green); color: var(--green);
       transition: border-color .3s, color .3s;
     }
     .timer-circle.warn { border-color: var(--gold); color: var(--gold); }
     .timer-circle.danger { border-color: var(--red); color: var(--red); }
 
-    /* ===== QUESTION ===== */
+    /* QUESTION */
     .q-number { font-size: 13px; color: var(--gold); margin-bottom: 4px; }
-    .q-text-bn { font-size: 16px; font-weight: 600; line-height: 1.55; margin-bottom: 4px; }
+    .q-text-bn { font-family: 'Hind Siliguri', sans-serif; font-size: 16px; font-weight: 600; line-height: 1.55; margin-bottom: 4px; }
     .q-text-en { font-size: 14px; color: var(--muted); line-height: 1.45; margin-bottom: 14px; }
 
-    /* ===== OPTIONS ===== */
+    /* OPTIONS */
     .options-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
     .opt-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 10px;
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px; border-radius: 10px;
       border: 2px solid var(--card-border);
-      cursor: pointer;
-      transition: all .2s;
-      font-size: 15px;
+      cursor: pointer; transition: all .2s; font-size: 15px;
     }
-    .opt-label:hover { border-color: var(--accent); }
-    .opt-label.selected {
-      border-color: var(--gold);
-      background: rgba(245,197,24,.08);
-    }
+    .opt-label:hover { border-color: var(--accent); transform: translateX(3px); }
+    .opt-label.selected { border-color: var(--gold); background: rgba(245,197,24,.08); }
     .opt-label input[type="radio"] { display: none; }
     .opt-marker {
-      width: 30px; height: 30px;
-      border-radius: 50%;
+      width: 30px; height: 30px; border-radius: 50%;
       border: 2px solid var(--card-border);
       display: flex; align-items: center; justify-content: center;
       font-weight: 700; font-size: 13px; flex-shrink: 0;
       transition: all .2s;
     }
-    .opt-label.selected .opt-marker {
-      border-color: var(--gold);
-      background: var(--gold);
-      color: #000;
-    }
-    .opt-text-bn { font-weight: 600; }
+    .opt-label.selected .opt-marker { border-color: var(--gold); background: var(--gold); color: #000; }
+    .opt-text-bn { font-family: 'Hind Siliguri', sans-serif; font-weight: 600; }
     .opt-text-en { font-size: 13px; color: var(--muted); }
-
     .q-footer { display: flex; justify-content: flex-end; }
 
-    /* ===== PROGRESS BAR ===== */
-    .progress-bar-wrap {
-      width: 100%;
-      height: 6px;
-      background: #223;
-      border-radius: 3px;
-      margin-bottom: 14px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      background: var(--gold);
-      border-radius: 3px;
-      transition: width .3s;
-    }
+    /* PROGRESS BAR */
+    .progress-bar-wrap { width: 100%; height: 6px; background: #1a2235; border-radius: 3px; margin-bottom: 14px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--gold)); border-radius: 3px; transition: width .3s; }
 
-    /* ===== FINISH CARD ===== */
+    /* FINISH */
     .finish-icon { font-size: 3rem; text-align: center; margin-bottom: 8px; }
 
-    /* ===== OPENING COUNTDOWN ===== */
-    .gate-card { text-align: center; }
-    .gate-card h2 { margin-bottom: 8px; }
-    .gate-message {
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-    .countdown {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 1px;
-      margin: 6px 0 8px;
-    }
-    .schedule-line {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-
-    /* ===== ERROR TEXT ===== */
+    /* ERROR */
     .error-msg { color: var(--red); font-size: 13px; margin-top: 6px; }
 
-    /* ===== RESPONSIVE ===== */
+    /* RESPONSIVE */
     @media (max-width: 480px) {
-      .brand h1 { font-size: 1.5rem; }
-      .card { padding: 16px 14px; }
+      .brand h1 { font-size: 1.6rem; }
+      .brand-logo { width: 140px; }
+      .card { padding: 18px 14px; }
       .row2 { grid-template-columns: 1fr; }
-      .row3 { grid-template-columns: 1fr; }
       .cat-picker { flex-direction: column; }
+      .syllabus-grid { grid-template-columns: 1fr; }
+      .countdown { font-size: 1.8rem; }
     }
 
-    /* ===== SCROLLBAR ===== */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 3px; }
@@ -305,27 +321,61 @@
 </head>
 <body>
 
-  <!-- ============ BRANDING ============ -->
+  <!-- BRANDING -->
   <div class="brand">
-    <span class="crescent">🌙</span>
+    <img src="logo.png" alt="ফুলকুঁড়ি আসর" class="brand-logo" />
     <h1>Ramadan Genius</h1>
     <div class="subtitle">রমজান জিনিয়াস</div>
     <div class="powered-by">Powered by ফুলকুঁড়ি আসর ঝিঙ্গেফুল</div>
   </div>
 
-  <!-- ============ OPENING COUNTDOWN CARD ============ -->
+  <!-- OPENING / LANDING -->
   <div class="card gate-card" id="gateCard">
-    <h2 id="gateTitle">⏳ Competition Countdown</h2>
-    <p class="gate-message" id="gateMessage">
-      প্রতিযোগিতা নির্ধারিত সময়ের জন্য অপেক্ষমাণ।<br/>
-      Please wait for the competition window.
-    </p>
+    <h2 id="gateTitle">🌙 রমাদান জিনিয়াস ২০২৬</h2>
+
+    <div id="landingContent">
+      <p class="landing-salam">আসসালামুয়ালাইকুম</p>
+      <p class="landing-desc">
+        পবিত্র মাহে রমজানকে সামনে রেখে শিশু বিকাশ কার্যক্রমের অংশ হিসেবে
+        <strong style="color:var(--accent)">ফুলকুঁড়ি আসর</strong> ঢাকা মহানগরী ঝিঙ্গেফুল শাখা আয়োজন করছে
+        <strong style="color:var(--gold)">"রমাদান জিনিয়াস ২০২৬"</strong>।
+        এই অনন্য আয়োজনটি আগামী <strong>৭-৮ মার্চ</strong> ২ দিনব্যাপী অনলাইনে অনুষ্ঠিত হবে।
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="landing-rules">
+        <h3>📋 নিয়মাবলী</h3>
+        <ul>
+          <li><strong>গ্রুপ ক:</strong> ৩য় — ৫ম শ্রেণি &nbsp;|&nbsp; <strong>গ্রুপ খ:</strong> ৬ষ্ঠ — ১০ম শ্রেণি</li>
+          <li>৫০টি MCQ প্রশ্ন, সময় ২০ মিনিট</li>
+          <li>বাংলা ও ইংরেজি দুই ফরমেটে প্রশ্ন</li>
+          <li>আকর্ষণীয় পুরস্কার, সার্টিফিকেট ও ক্রেস্ট</li>
+          <li>ফুলকুঁড়ির সদস্য হওয়ার প্রয়োজন নেই — সকল শিক্ষার্থী অংশগ্রহণ করতে পারবে</li>
+        </ul>
+      </div>
+
+      <div class="syllabus-grid">
+        <div class="syllabus-box">
+          <h4>📖 গ্রুপ ক (৩য়-৫ম)</h4>
+          <p>• সাওমের মৌলিক জ্ঞান<br/>• কুরআন নাজিলের ইতিহাস</p>
+        </div>
+        <div class="syllabus-box">
+          <h4>📖 গ্রুপ খ (৬ষ্ঠ-১০ম)</h4>
+          <p>• সাওমের মৌলিক জ্ঞান<br/>• কুরআন নাজিলের ইতিহাস<br/>• বদর যুদ্ধ<br/>• খন্দক যুদ্ধ</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+    </div>
+
+    <p class="gate-message" id="gateMessage"></p>
     <div class="countdown" id="gateCountdown">--:--:--</div>
     <p class="schedule-line" id="gateSchedule"></p>
-    <button class="btn-primary" id="enterBtn" style="display:none;">প্রবেশ করুন / Enter Quiz</button>
+    <button class="btn-primary" id="enterBtn" style="display:none;">অংশগ্রহণ করুন / Enter Quiz 🚀</button>
   </div>
 
-  <!-- ============ START / REGISTRATION CARD ============ -->
+  <!-- REGISTRATION -->
   <div class="card" id="startCard" style="display:none;">
     <h2>📝 Registration / নিবন্ধন</h2>
 
@@ -392,31 +442,27 @@
     <p class="error-msg" id="startError"></p>
   </div>
 
-  <!-- ============ QUIZ CARD ============ -->
+  <!-- QUIZ -->
   <div class="card" id="quizCard" style="display:none;">
     <div class="progress-bar-wrap">
       <div class="progress-bar-fill" id="progressBar" style="width:0%"></div>
     </div>
-
     <div class="topbar">
       <div class="progress-text" id="progressText">Q 1 / 60</div>
       <div class="timer-box">
         <div class="timer-circle" id="timerCircle">20</div>
       </div>
     </div>
-
     <div class="q-number" id="qNumber">প্রশ্ন ১</div>
     <div class="q-text-bn" id="qTextBn"></div>
     <div class="q-text-en" id="qTextEn"></div>
-
     <div class="options-list" id="optionsList"></div>
-
     <div class="q-footer">
       <button class="btn-next" id="nextBtn">পরবর্তী / Next ➜</button>
     </div>
   </div>
 
-  <!-- ============ FINISH CARD ============ -->
+  <!-- FINISH -->
   <div class="card" id="finishCard" style="display:none;">
     <div class="finish-icon">🎉</div>
     <h2 style="text-align:center;">জমা হয়েছে / Submitted</h2>
@@ -429,14 +475,13 @@
     </div>
   </div>
 
-  <!-- ============ HIDDEN FORM FOR CORS-SAFE SUBMIT ============ -->
+  <!-- HIDDEN FORM FOR CORS-SAFE SUBMIT -->
   <form id="submitForm" method="POST" target="hiddenFrame" style="display:none;">
-    <input type="hidden" name="secret"  id="secretField" />
+    <input type="hidden" name="secret" id="secretField" />
     <input type="hidden" name="payload" id="payloadField" />
   </form>
   <iframe name="hiddenFrame" id="hiddenFrame" style="display:none;"></iframe>
 
-  <!-- ============ SCRIPTS ============ -->
   <script src="script.js"></script>
 </body>
 </html>

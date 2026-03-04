@@ -165,23 +165,29 @@ function renderGate() {
   const phase = getContestPhase();
   const now = Date.now();
 
+  // Show schedule (no grace text on landing page)
   $("gateSchedule").innerHTML =
-    `সময় (Asia/Dhaka): ${formatDhakaDate(CONTEST_START_MS)} থেকে ${formatDhakaDate(CONTEST_END_MS)}<br/>` +
-    `Grace submit (আগে শুরু করাদের জন্য): ${formatDhakaDate(CONTEST_GRACE_END_MS)} পর্যন্ত`;
+    `সময় (Asia/Dhaka): ${formatDhakaDate(CONTEST_START_MS)} থেকে ${formatDhakaDate(CONTEST_END_MS)}`;
+
+  const landing = $("landingContent");
 
   if (phase === "before") {
-    $("gateTitle").innerText = "⏳ প্রতিযোগিতা শুরু হবে";
+    $("gateTitle").innerText = "🌙 রমাদান জিনিয়াস ২০২৬";
     $("gateMessage").innerHTML =
-      "নিচের কাউন্টডাউন শেষ হলে কুইজ শুরু করতে পারবেন।<br/>You can enter the quiz when the countdown reaches zero.";
+      "কাউন্টডাউন শেষ হলে কুইজ শুরু করতে পারবেন।<br/>Quiz starts when the countdown reaches zero.";
     $("gateCountdown").innerText = formatCountdown(CONTEST_START_MS - now);
+    if (landing) landing.style.display = "";
     hide("enterBtn");
     return;
   }
 
+  // Hide landing details once contest starts
+  if (landing) landing.style.display = "none";
+
   if (phase === "after") {
     $("gateTitle").innerText = "🔒 প্রতিযোগিতা শেষ";
     $("gateMessage").innerHTML =
-      "নির্ধারিত সময় শেষ হয়েছে।<br/>The competition window is closed.";
+      "নির্ধারিত সময় শেষ হয়েছে।<br/>The competition window is closed.";
     $("gateCountdown").innerText = "০০:০০:০০";
     hide("enterBtn");
     return;
@@ -199,7 +205,7 @@ function renderGate() {
 
   $("gateTitle").innerText = "✅ প্রতিযোগিতা চলছে";
   $("gateMessage").innerHTML =
-    "এখন অংশগ্রহণ করা যাবে। নিচে শেষ হওয়ার কাউন্টডাউন দেখুন।<br/>The competition is live now.";
+    "এখন অংশগ্রহণ করা যাবে। নিচে শেষ হওয়ার কাউন্টডাউন দেখুন।<br/>The competition is live now.";
   $("gateCountdown").innerText = formatCountdown(CONTEST_END_MS - now);
   show("enterBtn");
 }
