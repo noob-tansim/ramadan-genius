@@ -104,8 +104,35 @@
     }
     .card h2 { color: var(--gold); margin-bottom: 10px; font-size: 1.35rem; }
 
+    /* LANGUAGE TOGGLE */
+    .lang-toggle {
+      position: absolute; top: 14px; right: 14px;
+      display: flex; align-items: center; gap: 6px;
+      z-index: 2;
+    }
+    .lang-toggle span {
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--muted); transition: color .25s;
+    }
+    .lang-toggle span.active { color: var(--gold); }
+    .lang-switch {
+      position: relative; width: 42px; height: 22px;
+      background: var(--card-border); border-radius: 11px;
+      cursor: pointer; transition: background .25s;
+      border: none; padding: 0;
+    }
+    .lang-switch::after {
+      content: ''; position: absolute;
+      top: 3px; left: 3px;
+      width: 16px; height: 16px;
+      background: var(--gold); border-radius: 50%;
+      transition: transform .25s;
+    }
+    .lang-switch.en::after { transform: translateX(20px); }
+    .lang-switch.en { background: var(--accent); }
+
     /* GATE / LANDING */
-    .gate-card { text-align: center; }
+    .gate-card { text-align: center; position: relative; }
     .gate-card h2 { font-family: 'Tiro Bangla', serif; margin-bottom: 10px; }
 
     .landing-salam {
@@ -187,20 +214,37 @@
     }
 
     /* FORM */
-    .field { margin-bottom: 10px; }
-    .field label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 3px; }
+    .field { margin-bottom: 12px; }
+    .field label {
+      display: block; font-size: 0.82rem; color: var(--muted);
+      margin-bottom: 4px; font-weight: 600;
+    }
     .field input, .field select {
-      width: 100%; padding: 10px 12px;
-      border-radius: 8px; border: 1px solid var(--card-border);
+      width: 100%; padding: 11px 14px;
+      border-radius: 10px; border: 1px solid var(--card-border);
       background: #0e1726; color: var(--text);
       font-size: 15px; font-family: inherit;
       outline: none; transition: border .25s, box-shadow .25s;
     }
     .field input:focus, .field select:focus {
       border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(245,197,24,.1);
+      box-shadow: 0 0 0 3px rgba(245,197,24,.12);
     }
-    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .field input::placeholder { color: #4a5568; font-size: 13px; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    /* Registration card header */
+    #startCard h2 {
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    #startCard .cat-picker { margin: 14px 0 8px; }
+    .form-section-label {
+      font-size: 0.78rem; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 1.2px;
+      margin: 16px 0 8px; font-weight: 700;
+    }
 
     /* CATEGORY */
     .cat-picker { display: flex; gap: 10px; margin: 10px 0; }
@@ -361,11 +405,18 @@
 
   <!-- OPENING / LANDING -->
   <div class="card gate-card" id="gateCard">
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+      <span id="langLabelBn" class="active">বাং</span>
+      <button class="lang-switch" id="langSwitch" title="Switch language"></button>
+      <span id="langLabelEn">EN</span>
+    </div>
+
     <h2 id="gateTitle">🌙 রমাদান জিনিয়াস ২০২৬</h2>
 
     <div id="landingContent">
-      <p class="landing-salam">আসসালামুয়ালাইকুম</p>
-      <p class="landing-desc">
+      <p class="landing-salam" id="landingSalam">আসসালামুয়ালাইকুম</p>
+      <p class="landing-desc" id="landingDesc">
         পবিত্র মাহে রমজানকে সামনে রেখে শিশু বিকাশ কার্যক্রমের অংশ হিসেবে
         <strong style="color:var(--accent)">ফুলকুঁড়ি আসর</strong> ঢাকা মহানগরী ঝিঙ্গেফুল শাখা আয়োজন করছে
         <strong style="color:var(--gold)">"রমাদান জিনিয়াস ২০২৬"</strong>।
@@ -375,31 +426,32 @@
       <div class="divider"></div>
 
       <div class="landing-rules">
-        <h3>📋 নিয়মাবলী</h3>
-        <ul>
+        <h3 id="rulesTitle">📋 নিয়মাবলী</h3>
+        <ul id="rulesList">
           <li><strong>গ্রুপ ক:</strong> ৩য় — ৫ম শ্রেণি &nbsp;|&nbsp; <strong>গ্রুপ খ:</strong> ৬ষ্ঠ — ১০ম শ্রেণি</li>
           <li>৬০টি MCQ প্রশ্ন, সময় ২০ মিনিট</li>
+          <li>প্রতি ভুল উত্তরে ০.২৫ নম্বর কাটা যাবে (নেগেটিভ মার্কিং)</li>
           <li>বাংলা ও ইংরেজি দুই ফরমেটে প্রশ্ন</li>
           <li>আকর্ষণীয় পুরস্কার, সার্টিফিকেট ও ক্রেস্ট</li>
           <li>ফুলকুঁড়ির সদস্য হওয়ার প্রয়োজন নেই — সকল শিক্ষার্থী অংশগ্রহণ করতে পারবে</li>
         </ul>
       </div>
 
-      <div class="syllabus-grid">
+      <div class="syllabus-grid" id="syllabusGrid">
         <div class="syllabus-box">
-          <h4>📖 গ্রুপ ক (৩য়-৫ম)</h4>
-          <p>• সাওমের মৌলিক জ্ঞান<br/>• কুরআন নাজিলের ইতিহাস</p>
+          <h4 id="syllabusATitle">📖 গ্রুপ ক (৩য়-৫ম)</h4>
+          <p id="syllabusABody">• সাওমের মৌলিক জ্ঞান<br/>• কুরআন নাজিলের ইতিহাস</p>
         </div>
         <div class="syllabus-box">
-          <h4>📖 গ্রুপ খ (৬ষ্ঠ-১০ম)</h4>
-          <p>• সাওমের মৌলিক জ্ঞান<br/>• কুরআন নাজিলের ইতিহাস<br/>• বদর যুদ্ধ<br/>• খন্দক যুদ্ধ</p>
+          <h4 id="syllabusBTitle">📖 গ্রুপ খ (৬ষ্ঠ-১০ম)</h4>
+          <p id="syllabusBBody">• সাওমের মৌলিক জ্ঞান<br/>• কুরআন নাজিলের ইতিহাস<br/>• বদর যুদ্ধ<br/>• খন্দক যুদ্ধ</p>
         </div>
       </div>
 
       <div class="divider"></div>
 
       <div class="contact-section">
-        <h3>📞 যোগাযোগ</h3>
+        <h3 id="contactTitle">📞 যোগাযোগ</h3>
         <p>
           <a href="https://www.facebook.com/profile.php?id=61588471755033" target="_blank" rel="noopener" class="fb-link">📘 Facebook Page</a>
         </p>
@@ -412,16 +464,18 @@
     <p class="gate-message" id="gateMessage"></p>
     <div class="countdown" id="gateCountdown">--:--:--</div>
     <p class="schedule-line" id="gateSchedule"></p>
-    <button class="btn-primary" id="enterBtn" style="display:none;">অংশগ্রহণ করুন / Enter Quiz 🚀</button>
+    <button class="btn-primary" id="enterBtn" style="display:none;" data-bn="অংশগ্রহণ করুন 🚀" data-en="Enter Quiz 🚀">অংশগ্রহণ করুন 🚀</button>
   </div>
 
   <!-- REGISTRATION -->
   <div class="card" id="startCard" style="display:none;">
     <h2>📝 Registration / নিবন্ধন</h2>
 
+    <p class="form-section-label">👤 Personal Info</p>
+
     <div class="field">
       <label>নাম / Name *</label>
-      <input id="fName" placeholder="আপনার নাম লিখুন" autocomplete="name" />
+      <input id="fName" placeholder="আপনার পূর্ণ নাম / Your full name" autocomplete="name" />
     </div>
 
     <div class="row2">
@@ -445,15 +499,19 @@
       </div>
     </div>
 
+    <p class="form-section-label">🏫 Academic Info</p>
+
     <div class="field">
       <label>বিদ্যালয় / School *</label>
-      <input id="fSchool" placeholder="আপনার স্কুলের নাম" />
+      <input id="fSchool" placeholder="আপনার স্কুলের নাম / Your school name" />
     </div>
 
     <div class="field">
       <label>ঠিকানা / Address</label>
       <input id="fAddress" placeholder="গ্রাম / এলাকা / শহর" />
     </div>
+
+    <p class="form-section-label">👨‍👩‍👧 Guardian Info</p>
 
     <div class="row2">
       <div class="field">
@@ -466,7 +524,8 @@
       </div>
     </div>
 
-    <h2 style="margin-top:14px;">📚 Category / ক্যাটাগরি *</h2>
+    <p class="form-section-label">📚 Category</p>
+
     <div class="cat-picker">
       <button type="button" class="cat-btn" data-cat="A" id="catBtnA">
         <span class="cat-title">Category A</span>

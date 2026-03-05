@@ -50,6 +50,112 @@ let timerHandle = null;
 let gateHandle = null;
 let selectedCategory = null;
 let finishing = false;
+let currentLang = "bn"; // "bn" or "en"
+
+// ====== i18n — LANDING PAGE TRANSLATIONS ======
+const i18n = {
+  bn: {
+    gateTitle_before: "\u{1F319} \u09B0\u09AE\u09BE\u09A6\u09BE\u09A8 \u099C\u09BF\u09A8\u09BF\u09AF\u09BC\u09BE\u09B8 \u09E8\u09E6\u09E8\u09EC",
+    gateTitle_live: "\u2705 \u09AA\u09CD\u09B0\u09A4\u09BF\u09AF\u09CB\u0997\u09BF\u09A4\u09BE \u099A\u09B2\u099B\u09C7",
+    gateTitle_grace: "\u{1F552} Submission Grace \u099A\u09B2\u099B\u09C7",
+    gateTitle_after: "\u{1F512} \u09AA\u09CD\u09B0\u09A4\u09BF\u09AF\u09CB\u0997\u09BF\u09A4\u09BE \u09B6\u09C7\u09B7",
+    salam: "\u0986\u09B8\u09B8\u09BE\u09B2\u09BE\u09AE\u09C1\u09AF\u09BC\u09BE\u09B2\u09BE\u0987\u0995\u09C1\u09AE",
+    desc: '\u09AA\u09AC\u09BF\u09A4\u09CD\u09B0 \u09AE\u09BE\u09B9\u09C7 \u09B0\u09AE\u099C\u09BE\u09A8\u0995\u09C7 \u09B8\u09BE\u09AE\u09A8\u09C7 \u09B0\u09C7\u0996\u09C7 \u09B6\u09BF\u09B6\u09C1 \u09AC\u09BF\u0995\u09BE\u09B6 \u0995\u09BE\u09B0\u09CD\u09AF\u0995\u09CD\u09B0\u09AE\u09C7\u09B0 \u0985\u0982\u09B6 \u09B9\u09BF\u09B8\u09C7\u09AC\u09C7 <strong style="color:var(--accent)">\u09AB\u09C1\u09B2\u0995\u09C1\u0981\u09DC\u09BF \u0986\u09B8\u09B0</strong> \u09A2\u09BE\u0995\u09BE \u09AE\u09B9\u09BE\u09A8\u0997\u09B0\u09C0 \u099D\u09BF\u0999\u09CD\u0997\u09C7\u09AB\u09C1\u09B2 \u09B6\u09BE\u0996\u09BE \u0986\u09AF\u09BC\u09CB\u099C\u09A8 \u0995\u09B0\u099B\u09C7 <strong style="color:var(--gold)">\u201C\u09B0\u09AE\u09BE\u09A6\u09BE\u09A8 \u099C\u09BF\u09A8\u09BF\u09AF\u09BC\u09BE\u09B8 \u09E8\u09E6\u09E8\u09EC\u201D</strong>\u0964 \u098F\u0987 \u0985\u09A8\u09A8\u09CD\u09AF \u0986\u09AF\u09BC\u09CB\u099C\u09A8\u099F\u09BF \u0986\u0997\u09BE\u09AE\u09C0 <strong>\u09ED-\u09EE \u09AE\u09BE\u09B0\u09CD\u099A</strong> \u09E8 \u09A6\u09BF\u09A8\u09AC\u09CD\u09AF\u09BE\u09AA\u09C0 \u0985\u09A8\u09B2\u09BE\u0987\u09A8\u09C7 \u0985\u09A8\u09C1\u09B7\u09CD\u09A0\u09BF\u09A4 \u09B9\u09AC\u09C7\u0964',
+    rulesTitle: "\u{1F4CB} \u09A8\u09BF\u09AF\u09BC\u09AE\u09BE\u09AC\u09B2\u09C0",
+    rules: [
+      '<strong>\u0997\u09CD\u09B0\u09C1\u09AA \u0995:</strong> \u09E9\u09AF\u09BC \u2014 \u09EB\u09AE \u09B6\u09CD\u09B0\u09C7\u09A3\u09BF &nbsp;|&nbsp; <strong>\u0997\u09CD\u09B0\u09C1\u09AA \u0996:</strong> \u09EC\u09B7\u09CD\u09A0 \u2014 \u09E7\u09E6\u09AE \u09B6\u09CD\u09B0\u09C7\u09A3\u09BF',
+      '\u09EC\u09E6\u099F\u09BF MCQ \u09AA\u09CD\u09B0\u09B6\u09CD\u09A8, \u09B8\u09AE\u09AF\u09BC \u09E8\u09E6 \u09AE\u09BF\u09A8\u09BF\u099F',
+      '\u09AA\u09CD\u09B0\u09A4\u09BF \u09AD\u09C1\u09B2 \u0989\u09A4\u09CD\u09A4\u09B0\u09C7 \u09E6.\u09E8\u09EB \u09A8\u09AE\u09CD\u09AC\u09B0 \u0995\u09BE\u099F\u09BE \u09AF\u09BE\u09AC\u09C7 (\u09A8\u09C7\u0997\u09C7\u099F\u09BF\u09AD \u09AE\u09BE\u09B0\u09CD\u0995\u09BF\u0982)',
+      '\u09AC\u09BE\u0982\u09B2\u09BE \u0993 \u0987\u0982\u09B0\u09C7\u099C\u09BF \u09A6\u09C1\u0987 \u09AB\u09B0\u09AE\u09C7\u099F\u09C7 \u09AA\u09CD\u09B0\u09B6\u09CD\u09A8',
+      '\u0986\u0995\u09B0\u09CD\u09B7\u09A3\u09C0\u09AF\u09BC \u09AA\u09C1\u09B0\u09B8\u09CD\u0995\u09BE\u09B0, \u09B8\u09BE\u09B0\u09CD\u099F\u09BF\u09AB\u09BF\u0995\u09C7\u099F \u0993 \u0995\u09CD\u09B0\u09C7\u09B8\u09CD\u099F',
+      '\u09AB\u09C1\u09B2\u0995\u09C1\u0981\u09DC\u09BF\u09B0 \u09B8\u09A6\u09B8\u09CD\u09AF \u09B9\u0993\u09AF\u09BC\u09BE\u09B0 \u09AA\u09CD\u09B0\u09AF\u09BC\u09CB\u099C\u09A8 \u09A8\u09C7\u0987 \u2014 \u09B8\u0995\u09B2 \u09B6\u09BF\u0995\u09CD\u09B7\u09BE\u09B0\u09CD\u09A5\u09C0 \u0985\u0982\u09B6\u0997\u09CD\u09B0\u09B9\u09A3 \u0995\u09B0\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7'
+    ],
+    syllabusATitle: "\u{1F4D6} \u0997\u09CD\u09B0\u09C1\u09AA \u0995 (\u09E9\u09AF\u09BC-\u09EB\u09AE)",
+    syllabusABody: "\u2022 \u09B8\u09BE\u0993\u09AE\u09C7\u09B0 \u09AE\u09CC\u09B2\u09BF\u0995 \u099C\u09CD\u099E\u09BE\u09A8<br/>\u2022 \u0995\u09C1\u09B0\u0986\u09A8 \u09A8\u09BE\u099C\u09BF\u09B2\u09C7\u09B0 \u0987\u09A4\u09BF\u09B9\u09BE\u09B8",
+    syllabusBTitle: "\u{1F4D6} \u0997\u09CD\u09B0\u09C1\u09AA \u0996 (\u09EC\u09B7\u09CD\u09A0-\u09E7\u09E6\u09AE)",
+    syllabusBBody: "\u2022 \u09B8\u09BE\u0993\u09AE\u09C7\u09B0 \u09AE\u09CC\u09B2\u09BF\u0995 \u099C\u09CD\u099E\u09BE\u09A8<br/>\u2022 \u0995\u09C1\u09B0\u0986\u09A8 \u09A8\u09BE\u099C\u09BF\u09B2\u09C7\u09B0 \u0987\u09A4\u09BF\u09B9\u09BE\u09B8<br/>\u2022 \u09AC\u09A6\u09B0 \u09AF\u09C1\u09A6\u09CD\u09A7<br/>\u2022 \u0996\u09A8\u09CD\u09A6\u0995 \u09AF\u09C1\u09A6\u09CD\u09A7",
+    contactTitle: "\u{1F4DE} \u09AF\u09CB\u0997\u09BE\u09AF\u09CB\u0997",
+    enterBtn: "\u0985\u0982\u09B6\u0997\u09CD\u09B0\u09B9\u09A3 \u0995\u09B0\u09C1\u09A8 \u{1F680}",
+    msg_before: "\u0995\u09BE\u0989\u09A8\u09CD\u099F\u09A1\u09BE\u0989\u09A8 \u09B6\u09C7\u09B7 \u09B9\u09B2\u09C7 \u0995\u09C1\u0987\u099C \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u09A8\u0964",
+    msg_live: "\u098F\u0996\u09A8 \u0985\u0982\u09B6\u0997\u09CD\u09B0\u09B9\u09A3 \u0995\u09B0\u09BE \u09AF\u09BE\u09AC\u09C7\u0964 \u09A8\u09BF\u099A\u09C7 \u09B6\u09C7\u09B7 \u09B9\u0993\u09AF\u09BC\u09BE\u09B0 \u0995\u09BE\u0989\u09A8\u09CD\u099F\u09A1\u09BE\u0989\u09A8 \u09A6\u09C7\u0996\u09C1\u09A8\u0964",
+    msg_grace: "\u09A8\u09A4\u09C1\u09A8 \u0995\u09C1\u0987\u099C \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09BE \u09AF\u09BE\u09AC\u09C7 \u09A8\u09BE\u0964 \u09AF\u09BE\u09B0\u09BE \u0986\u0997\u09C7 \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09C7\u099B\u09C7 \u09A4\u09BE\u09B0\u09BE \u0995\u09C7\u09AC\u09B2 submit/retry \u0995\u09B0\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u0964",
+    msg_after: "\u09A8\u09BF\u09B0\u09CD\u09A7\u09BE\u09B0\u09BF\u09A4 \u09B8\u09AE\u09AF\u09BC \u09B6\u09C7\u09B7 \u09B9\u09AF\u09BC\u09C7\u099B\u09C7\u0964",
+    schedulePrefix: "\u09B8\u09AE\u09AF\u09BC (Asia/Dhaka): ",
+    scheduleMid: " \u09A5\u09C7\u0995\u09C7 "
+  },
+  en: {
+    gateTitle_before: "\u{1F319} Ramadan Genius 2026",
+    gateTitle_live: "\u2705 Competition is Live",
+    gateTitle_grace: "\u{1F552} Submission Grace Period",
+    gateTitle_after: "\u{1F512} Competition Ended",
+    salam: "Assalamu Alaikum",
+    desc: 'As part of the child development program ahead of the holy month of Ramadan, <strong style="color:var(--accent)">Phulkuri Asor</strong> Dhaka Mahanagari Jhingephul branch is organizing <strong style="color:var(--gold)">"Ramadan Genius 2026"</strong>. This unique event will be held online over 2 days on <strong>March 7\u20138</strong>.',
+    rulesTitle: "\u{1F4CB} Rules & Guidelines",
+    rules: [
+      '<strong>Group A:</strong> Class 3\u20135 &nbsp;|&nbsp; <strong>Group B:</strong> Class 6\u201310',
+      '60 MCQ questions, 20 minutes total',
+      '0.25 marks deducted per wrong answer (negative marking)',
+      'Questions in both Bangla and English',
+      'Attractive prizes, certificates & crests',
+      'No need to be a Phulkuri member \u2014 all students can participate'
+    ],
+    syllabusATitle: "\u{1F4D6} Group A (Class 3\u20135)",
+    syllabusABody: "\u2022 Basic knowledge of Sawm (Fasting)<br/>\u2022 History of Quran revelation",
+    syllabusBTitle: "\u{1F4D6} Group B (Class 6\u201310)",
+    syllabusBBody: "\u2022 Basic knowledge of Sawm (Fasting)<br/>\u2022 History of Quran revelation<br/>\u2022 Battle of Badr<br/>\u2022 Battle of Khandaq",
+    contactTitle: "\u{1F4DE} Contact",
+    enterBtn: "Enter Quiz \u{1F680}",
+    msg_before: "Quiz starts when the countdown reaches zero.",
+    msg_live: "The competition is live now. See the countdown below.",
+    msg_grace: "No new quiz starts. Only previously started participants may submit/retry.",
+    msg_after: "The competition window is closed.",
+    schedulePrefix: "Time (Asia/Dhaka): ",
+    scheduleMid: " to "
+  }
+};
+
+function applyLang(lang) {
+  currentLang = lang;
+  const t = i18n[lang];
+  const sw = $("langSwitch");
+
+  if (lang === "en") {
+    sw.classList.add("en");
+    $("langLabelEn").classList.add("active");
+    $("langLabelBn").classList.remove("active");
+  } else {
+    sw.classList.remove("en");
+    $("langLabelBn").classList.add("active");
+    $("langLabelEn").classList.remove("active");
+  }
+
+  // Salam
+  $("landingSalam").innerText = t.salam;
+  // Description
+  $("landingDesc").innerHTML = t.desc;
+  // Rules title
+  $("rulesTitle").innerHTML = t.rulesTitle;
+  // Rules list
+  const ul = $("rulesList");
+  ul.innerHTML = "";
+  t.rules.forEach(r => {
+    const li = document.createElement("li");
+    li.innerHTML = r;
+    ul.appendChild(li);
+  });
+  // Syllabus
+  $("syllabusATitle").innerHTML = t.syllabusATitle;
+  $("syllabusABody").innerHTML = t.syllabusABody;
+  $("syllabusBTitle").innerHTML = t.syllabusBTitle;
+  $("syllabusBBody").innerHTML = t.syllabusBBody;
+  // Contact
+  $("contactTitle").innerHTML = t.contactTitle;
+  // Enter button
+  $("enterBtn").innerText = t.enterBtn;
+
+  // Re-render gate to update phase-dependent text
+  renderGate();
+}
 
 // ====== HELPERS ======
 function $(id) { return document.getElementById(id); }
@@ -164,17 +270,17 @@ function contestStatusMessage() {
 function renderGate() {
   const phase = getContestPhase();
   const now = Date.now();
+  const t = i18n[currentLang];
 
-  // Show schedule (no grace text on landing page)
+  // Show schedule
   $("gateSchedule").innerHTML =
-    `সময় (Asia/Dhaka): ${formatDhakaDate(CONTEST_START_MS)} থেকে ${formatDhakaDate(CONTEST_END_MS)}`;
+    `${t.schedulePrefix}${formatDhakaDate(CONTEST_START_MS)}${t.scheduleMid}${formatDhakaDate(CONTEST_END_MS)}`;
 
   const landing = $("landingContent");
 
   if (phase === "before") {
-    $("gateTitle").innerText = "🌙 রমাদান জিনিয়াস ২০২৬";
-    $("gateMessage").innerHTML =
-      "কাউন্টডাউন শেষ হলে কুইজ শুরু করতে পারবেন।<br/>Quiz starts when the countdown reaches zero.";
+    $("gateTitle").innerText = t.gateTitle_before;
+    $("gateMessage").innerHTML = t.msg_before;
     $("gateCountdown").innerText = formatCountdown(CONTEST_START_MS - now);
     if (landing) landing.style.display = "";
     hide("enterBtn");
@@ -185,28 +291,25 @@ function renderGate() {
   if (landing) landing.style.display = "";
 
   if (phase === "after") {
-    $("gateTitle").innerText = "🔒 প্রতিযোগিতা শেষ";
-    $("gateMessage").innerHTML =
-      "নির্ধারিত সময় শেষ হয়েছে।<br/>The competition window is closed.";
-    $("gateCountdown").innerText = "০০:০০:০০";
+    $("gateTitle").innerText = t.gateTitle_after;
+    $("gateMessage").innerHTML = t.msg_after;
+    $("gateCountdown").innerText = "\u09E6\u09E6:\u09E6\u09E6:\u09E6\u09E6";
     hide("enterBtn");
     return;
   }
 
   if (phase === "grace") {
-    $("gateTitle").innerText = "🕒 Submission Grace চলছে";
-    $("gateMessage").innerHTML =
-      "নতুন কুইজ শুরু করা যাবে না। যারা আগে শুরু করেছে তারা কেবল submit/retry করতে পারবে।<br/>" +
-      "No new quiz starts. Only previously started participants may submit/retry.";
+    $("gateTitle").innerText = t.gateTitle_grace;
+    $("gateMessage").innerHTML = t.msg_grace;
     $("gateCountdown").innerText = formatCountdown(CONTEST_GRACE_END_MS - now);
     hide("enterBtn");
     return;
   }
 
-  $("gateTitle").innerText = "✅ প্রতিযোগিতা চলছে";
-  $("gateMessage").innerHTML =
-    "এখন অংশগ্রহণ করা যাবে। নিচে শেষ হওয়ার কাউন্টডাউন দেখুন।<br/>The competition is live now.";
+  $("gateTitle").innerText = t.gateTitle_live;
+  $("gateMessage").innerHTML = t.msg_live;
   $("gateCountdown").innerText = formatCountdown(CONTEST_END_MS - now);
+  $("enterBtn").innerText = t.enterBtn;
   show("enterBtn");
 }
 
@@ -711,6 +814,11 @@ window.addEventListener("beforeunload", (e) => {
 window.addEventListener("load", async () => {
   setupCategoryPicker();
   $("fClass").addEventListener("change", autoSelectCategory);
+
+  // Language toggle
+  $("langSwitch").addEventListener("click", () => {
+    applyLang(currentLang === "bn" ? "en" : "bn");
+  });
 
   $("enterBtn").addEventListener("click", enterQuizFromGate);
   $("startBtn").addEventListener("click", startQuiz);
