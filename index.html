@@ -106,20 +106,21 @@
 
     /* LANGUAGE TOGGLE */
     .lang-toggle {
-      position: absolute; top: 14px; right: 14px;
-      display: flex; align-items: center; gap: 6px;
+      display: flex; align-items: center; justify-content: flex-end;
+      gap: 6px; margin-bottom: 10px;
       z-index: 2;
     }
     .lang-toggle span {
-      font-size: 0.72rem; font-weight: 600;
+      font-size: 0.75rem; font-weight: 600;
       color: var(--muted); transition: color .25s;
+      user-select: none;
     }
     .lang-toggle span.active { color: var(--gold); }
     .lang-switch {
       position: relative; width: 42px; height: 22px;
       background: var(--card-border); border-radius: 11px;
       cursor: pointer; transition: background .25s;
-      border: none; padding: 0;
+      border: none; padding: 0; flex-shrink: 0;
     }
     .lang-switch::after {
       content: ''; position: absolute;

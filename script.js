@@ -209,6 +209,10 @@ function formatCountdown(ms) {
   const secs = rem % 60;
 
   const hms = `${pad2(hours)}:${pad2(mins)}:${pad2(secs)}`;
+  if (currentLang === "en") {
+    if (days > 0) return `${days} day${days > 1 ? 's' : ''} ${hms}`;
+    return hms;
+  }
   if (days > 0) {
     return `${toBanglaNum(days)} দিন ${toBanglaNum(hms)}`;
   }
@@ -293,7 +297,7 @@ function renderGate() {
   if (phase === "after") {
     $("gateTitle").innerText = t.gateTitle_after;
     $("gateMessage").innerHTML = t.msg_after;
-    $("gateCountdown").innerText = "\u09E6\u09E6:\u09E6\u09E6:\u09E6\u09E6";
+    $("gateCountdown").innerText = currentLang === "en" ? "00:00:00" : "\u09E6\u09E6:\u09E6\u09E6:\u09E6\u09E6";
     hide("enterBtn");
     return;
   }
