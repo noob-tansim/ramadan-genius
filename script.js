@@ -588,14 +588,24 @@ function resumeIfPossible() {
     return true;
   }
 
-  while (Date.now() >= state.questionEndsAt && state.currentIndex < state.quiz.length) {
-    state.currentIndex++;
-    state.questionEndsAt = Date.now() + SECONDS_PER_QUESTION * 1000;
-  }
+  // Calculate how many questions were missed while user was away
+  const now = Date.now();
+  if (now >= state.questionEndsAt) {
+    // Time past the last known deadline
+    const overflowMs = now - state.questionEndsAt;
+    // 1 for the question that expired + however many full 20s windows passed after
+    const missedQuestions = 1 + Math.floor(overflowMs / (SECONDS_PER_QUESTION * 1000));
+    state.currentIndex += missedQuestions;
 
-  if (state.currentIndex >= state.quiz.length) {
-    finishQuiz();
-    return true;
+    if (state.currentIndex >= state.quiz.length) {
+      finishQuiz();
+      return true;
+    }
+
+    // Set deadline for the current question (partial time remaining in this window)
+    const partialMs = overflowMs % (SECONDS_PER_QUESTION * 1000);
+    state.questionEndsAt = now + (SECONDS_PER_QUESTION * 1000 - partialMs);
+    saveState();
   }
 
   hide("gateCard");
