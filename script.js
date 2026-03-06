@@ -659,33 +659,28 @@ function submitToSheet(payload) {
     const form = $("submitForm");
     const iframe = $("hiddenFrame");
 
-    // Reset iframe to avoid stale onload
+    // Clear any previous handler
     iframe.onload = null;
-    iframe.src = "about:blank";
+
+    $("secretField").value = SECRET;
+    $("payloadField").value = JSON.stringify(payload);
+    form.action = getNextEndpoint();
+
+    let done = false;
+
+    iframe.onload = () => {
+      if (done) return;
+      done = true;
+      resolve(true);
+    };
+
+    form.submit();
 
     setTimeout(() => {
-      $("secretField").value = SECRET;
-      $("payloadField").value = JSON.stringify(payload);
-      form.action = getNextEndpoint();
-
-      let done = false;
-      let initialLoad = true;
-
-      iframe.onload = () => {
-        if (initialLoad) { initialLoad = false; return; }
-        if (done) return;
-        done = true;
-        resolve(true);
-      };
-
-      form.submit();
-
-      setTimeout(() => {
-        if (done) return;
-        done = true;
-        resolve(false);
-      }, 15000);
-    }, 100);
+      if (done) return;
+      done = true;
+      resolve(false);
+    }, 15000);
   });
 }
 
@@ -937,41 +932,29 @@ function submitRegToSheet(payload) {
     const form = $("submitForm");
     const iframe = $("hiddenFrame");
 
-    // Reset iframe to avoid stale onload events
+    // Clear any previous handler
     iframe.onload = null;
-    iframe.src = "about:blank";
 
-    // Wait a tick for the iframe reset, then submit
+    $("secretField").value = SECRET;
+    $("payloadField").value = JSON.stringify(payload);
+    form.action = getNextEndpoint();
+
+    let done = false;
+
+    iframe.onload = () => {
+      if (done) return;
+      done = true;
+      resolve(true);
+    };
+
+    form.submit();
+
+    // Timeout fallback: form POST fires even if onload is unreliable
     setTimeout(() => {
-      $("secretField").value = SECRET;
-      $("payloadField").value = JSON.stringify(payload);
-      form.action = getNextEndpoint();
-
-      let done = false;
-      let initialLoad = true;
-
-      iframe.onload = () => {
-        // Skip the initial about:blank load event
-        if (initialLoad) {
-          initialLoad = false;
-          return;
-        }
-        if (done) return;
-        done = true;
-        resolve(true);
-      };
-
-      form.submit();
-
-      // Timeout fallback — treat as success because form POST has no
-      // reliable cross-origin response detection via iframe, and the
-      // Apps Script will have received the data even if onload is quirky.
-      setTimeout(() => {
-        if (done) return;
-        done = true;
-        resolve(true);  // Assume success — data was POSTed
-      }, 12000);
-    }, 100);
+      if (done) return;
+      done = true;
+      resolve(true);  // Assume success: data was POSTed
+    }, 8000);
   });
 }
 
