@@ -764,15 +764,9 @@ async function finishQuiz() {
     state.submitted = true;
     saveState();
     localStorage.removeItem(STORAGE_KEY);
-    let msg = `✅ সফলভাবে জমা হয়েছে! (${toBanglaNum(result.attempts)} চেষ্টায়)<br/>`;
-    if (result.score !== undefined && !result.viaiframe) {
-      msg += `<br/><strong style="font-size:1.3em;color:var(--gold)">স্কোর / Score: ${result.score}</strong><br/>`;
-      msg += `সঠিক / Correct: ${result.correct} &nbsp;|&nbsp; ভুল / Wrong: ${result.wrong} &nbsp;|&nbsp; অনুত্তরিত / Unanswered: ${result.unanswered}<br/><br/>`;
-    } else if (result.viaiframe) {
-      msg += `<br/><em style="color:var(--muted)">স্কোর দেখা যাচ্ছে না (iframe fallback)। আপনার উত্তর সফলভাবে জমা হয়েছে।<br/>Score unavailable (iframe fallback). Your answers were submitted successfully.</em><br/><br/>`;
-    }
-    msg += `Submitted successfully in ${result.attempts} attempt(s). You may close this page.`;
-    $("finishMsg").innerHTML = msg;
+    $("finishMsg").innerHTML =
+      "✅ আপনার উত্তর সফলভাবে জমা হয়েছে!<br/>" +
+      "Your answers have been submitted successfully. You may close this page.";
     finishing = false;
     return;
   }
@@ -829,15 +823,9 @@ async function retrySubmit() {
     state.submitted = true;
     saveState();
     localStorage.removeItem(STORAGE_KEY);
-    let msg = `✅ সফলভাবে জমা হয়েছে! (${toBanglaNum(result.attempts)} চেষ্টায়)<br/>`;
-    if (result.score !== undefined && !result.viaiframe) {
-      msg += `<br/><strong style="font-size:1.3em;color:var(--gold)">স্কোর / Score: ${result.score}</strong><br/>`;
-      msg += `সঠিক / Correct: ${result.correct} &nbsp;|&nbsp; ভুল / Wrong: ${result.wrong} &nbsp;|&nbsp; অনুত্তরিত / Unanswered: ${result.unanswered}<br/><br/>`;
-    } else if (result.viaiframe) {
-      msg += `<br/><em style="color:var(--muted)">স্কোর দেখা যাচ্ছে না (iframe fallback)। আপনার উত্তর সফলভাবে জমা হয়েছে।<br/>Score unavailable (iframe fallback). Your answers were submitted successfully.</em><br/><br/>`;
-    }
-    msg += `Submitted successfully in ${result.attempts} attempt(s). You may close this page.`;
-    $("finishMsg").innerHTML = msg;
+    $("finishMsg").innerHTML =
+      "✅ আপনার উত্তর সফলভাবে জমা হয়েছে!<br/>" +
+      "Your answers have been submitted successfully. You may close this page.";
     return;
   }
 
