@@ -835,23 +835,12 @@ async function retrySubmit() {
 
 
 // ====== PRE-REGISTRATION ======
-const REG_STORAGE_KEY = "ramadan_genius_registered";
 let regSubmitting = false;  // guard against double-clicks
-
-function isAlreadyRegistered() {
-  return localStorage.getItem(REG_STORAGE_KEY) === "yes";
-}
 
 function showPreRegForm() {
   hide("gateCard");
   show("preRegCard");
   $("regError").innerText = "";
-
-  // If already registered, show success and lock form
-  if (isAlreadyRegistered()) {
-    lockRegForm();
-    return;
-  }
   $("regSuccess").style.display = "none";
   $("regSubmitBtn").disabled = false;
 }
@@ -861,24 +850,22 @@ function hidePreRegForm() {
   show("gateCard");
 }
 
-function lockRegForm() {
-  // Disable all inputs and the submit button permanently
+function resetRegForm() {
+  // Clear all fields for next registration
   const inputs = document.querySelectorAll("#preRegCard input, #preRegCard select");
-  inputs.forEach(inp => inp.disabled = true);
-  $("regSubmitBtn").disabled = true;
-  $("regSubmitBtn").innerText = "\u2705 Submitted";
-  $("regSuccess").innerHTML =
-    "\u2705 \u0986\u09AA\u09A8\u09BE\u09B0 \u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u0986\u0997\u09C7\u0987 \u09B8\u09AE\u09CD\u09AA\u09A8\u09CD\u09A8 \u09B9\u09AF\u09BC\u09C7\u099B\u09C7\u0964 \u09AA\u09CD\u09B0\u09A4\u09BF\u09AF\u09CB\u0997\u09BF\u09A4\u09BE \u09B6\u09C1\u09B0\u09C1 \u09B9\u09B2\u09C7 \u098F\u0987 \u09AA\u09C7\u0987\u099C\u09C7 \u098F\u09B8\u09C7 \u0995\u09C1\u0987\u099C \u09A6\u09BF\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u09A8\u0964<br/>Your registration is already submitted. Come back when the contest starts to take the quiz.";
-  $("regSuccess").style.display = "";
+  inputs.forEach(inp => {
+    if (inp.tagName === "SELECT") inp.selectedIndex = 0;
+    else inp.value = "";
+  });
+  $("regError").innerText = "";
+  $("regSuccess").style.display = "none";
+  $("regSubmitBtn").disabled = false;
+  $("regSubmitBtn").innerText = "\u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AE\u09CD\u09AA\u09A8\u09CD\u09A8 \u0995\u09B0\u09C1\u09A8 / Submit Registration \u2705";
 }
 
 async function submitRegistration() {
-  // Prevent double-clicks and re-submissions
+  // Prevent double-clicks
   if (regSubmitting) return;
-  if (isAlreadyRegistered()) {
-    lockRegForm();
-    return;
-  }
 
   const name = ($("rName").value || "").trim();
   const phone = ($("rPhone").value || "").trim();
@@ -917,9 +904,15 @@ async function submitRegistration() {
   regSubmitting = false;
 
   if (ok) {
-    // Mark as registered in localStorage to prevent re-submission
-    localStorage.setItem(REG_STORAGE_KEY, "yes");
-    lockRegForm();
+    $("regSubmitBtn").disabled = true;
+    $("regSubmitBtn").innerText = "\u2705 Submitted";
+    $("regSuccess").innerHTML =
+      "\u2705 \u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AB\u09B2! \u09AA\u09CD\u09B0\u09A4\u09BF\u09AF\u09CB\u0997\u09BF\u09A4\u09BE \u09B6\u09C1\u09B0\u09C1 \u09B9\u09B2\u09C7 \u098F\u0987 \u09AA\u09C7\u0987\u099C\u09C7 \u098F\u09B8\u09C7 \u0995\u09C1\u0987\u099C \u09A6\u09BF\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u09A8\u0964<br/>Registration successful! Come back when the contest starts.";
+    $("regSuccess").style.display = "";
+    // Show "Register Another" button after 2 seconds
+    setTimeout(() => {
+      if ($("regAnotherBtn")) $("regAnotherBtn").style.display = "";
+    }, 2000);
   } else {
     $("regSubmitBtn").disabled = false;
     $("regSubmitBtn").innerText = "\u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AE\u09CD\u09AA\u09A8\u09CD\u09A8 \u0995\u09B0\u09C1\u09A8 / Submit Registration \u2705";
@@ -979,6 +972,10 @@ window.addEventListener("load", async () => {
   if ($("preRegBtn")) $("preRegBtn").addEventListener("click", showPreRegForm);
   if ($("regBackBtn")) $("regBackBtn").addEventListener("click", hidePreRegForm);
   if ($("regSubmitBtn")) $("regSubmitBtn").addEventListener("click", submitRegistration);
+  if ($("regAnotherBtn")) $("regAnotherBtn").addEventListener("click", () => {
+    $("regAnotherBtn").style.display = "none";
+    resetRegForm();
+  });
   $("startBtn").addEventListener("click", startQuiz);
   $("nextBtn").addEventListener("click", goToNextQuestion);
   $("retryBtn").addEventListener("click", retrySubmit);
