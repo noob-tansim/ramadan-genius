@@ -373,6 +373,21 @@
       margin-top: 6px;
     }
 
+
+    /* PRE-REGISTRATION CARD */
+    #preRegCard h2 { text-align: center; padding-bottom: 10px; border-bottom: 1px solid var(--card-border); }
+    #preRegCard .form-section-label { margin-top: 14px; }
+    .btn-secondary {
+      width: 100%; padding: 13px;
+      border-radius: 10px; border: 2px solid var(--accent);
+      background: transparent; color: var(--accent);
+      font-weight: 700; font-size: 15px;
+      font-family: inherit; cursor: pointer;
+      margin-top: 8px; transition: all .25s;
+    }
+    .btn-secondary:hover { background: rgba(26,188,156,.1); transform: translateY(-1px); }
+    .reg-success { color: var(--green); font-size: 14px; text-align: center; margin-top: 8px; line-height: 1.5; }
+
     /* ERROR */
     .error-msg { color: var(--red); font-size: 13px; margin-top: 6px; }
 
@@ -419,7 +434,7 @@
         পবিত্র মাহে রমজানকে সামনে রেখে শিশু বিকাশ কার্যক্রমের অংশ হিসেবে
         <strong style="color:var(--accent)">ফুলকুঁড়ি আসর</strong> ঢাকা মহানগরী ঝিঙ্গেফুল শাখা আয়োজন করছে
         <strong style="color:var(--gold)">"রমাদান জিনিয়াস ২০২৬"</strong>।
-        এই অনন্য আয়োজনটি আগামী <strong>৭-৮ মার্চ</strong> ২ দিনব্যাপী অনলাইনে অনুষ্ঠিত হবে।
+        এই অনন্য আয়োজনটি আগামী <strong>৯-১০ মার্চ</strong> ২ দিনব্যাপী অনলাইনে অনুষ্ঠিত হবে।
       </p>
 
       <div class="divider"></div>
@@ -429,6 +444,8 @@
         <ul id="rulesList">
           <li><strong>গ্রুপ ক:</strong> ৩য় — ৫ম শ্রেণি &nbsp;|&nbsp; <strong>গ্রুপ খ:</strong> ৬ষ্ঠ — ১০ম শ্রেণি</li>
           <li>৬০টি MCQ প্রশ্ন, সময় ২০ মিনিট</li>
+          <li>প্রত্যেক প্রশ্নের জন্য ২০ সেকেন্ড সময়</li>
+          <li>পরবর্তী/Next বাটনে ক্লিক করার পর আগের প্রশ্নে ফিরে আসা যাবে না</li>
           <li>প্রতি ভুল উত্তরে ০.২৫ নম্বর কাটা যাবে (নেগেটিভ মার্কিং)</li>
           <li>বাংলা ও ইংরেজি দুই ফরমেটে প্রশ্ন</li>
           <li>আকর্ষণীয় পুরস্কার, সার্টিফিকেট ও ক্রেস্ট</li>
@@ -463,12 +480,131 @@
     <p class="gate-message" id="gateMessage"></p>
     <div class="countdown" id="gateCountdown">--:--:--</div>
     <p class="schedule-line" id="gateSchedule"></p>
-    <button class="btn-primary" id="enterBtn" style="display:none;" data-bn="অংশগ্রহণ করুন 🚀" data-en="Enter Quiz 🚀">অংশগ্রহণ করুন 🚀</button>
+    <button class="btn-primary" id="enterBtn" style="display:none;">অংশগ্রহণ করুন 🚀</button>
+    <button class="btn-secondary" id="preRegBtn" style="display:none;">রেজিস্ট্রেশন করুন / Register ✍️</button>
+  </div>
+
+  <!-- PRE-REGISTRATION (before contest only) -->
+  <div class="card" id="preRegCard" style="display:none;">
+    <h2>✍️ রেজিস্ট্রেশন / Registration</h2>
+
+    <p class="form-section-label">👤 Personal Info</p>
+
+    <div class="field">
+      <label>নাম / Name *</label>
+      <input id="rName" placeholder="আপনার পূর্ণ নাম / Your full name" autocomplete="name" />
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>পিতার নাম / Father's Name</label>
+        <input id="rFatherName" placeholder="পিতার নাম" />
+      </div>
+      <div class="field">
+        <label>পিতার পেশা / Father's Profession</label>
+        <input id="rFatherProf" placeholder="Profession" />
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>মাতার নাম / Mother's Name</label>
+        <input id="rMotherName" placeholder="মাতার নাম" />
+      </div>
+      <div class="field">
+        <label>মাতার পেশা / Mother's Profession</label>
+        <input id="rMotherProf" placeholder="Profession" />
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>জন্ম তারিখ / Date of Birth</label>
+        <input id="rDob" type="date" />
+      </div>
+      <div class="field">
+        <label>রক্তের গ্রুপ / Blood Group</label>
+        <select id="rBlood">
+          <option value="">-- Select --</option>
+          <option value="A+">A+</option><option value="A-">A-</option>
+          <option value="B+">B+</option><option value="B-">B-</option>
+          <option value="AB+">AB+</option><option value="AB-">AB-</option>
+          <option value="O+">O+</option><option value="O-">O-</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="form-section-label">🏫 Academic Info</p>
+
+    <div class="field">
+      <label>শিক্ষাপ্রতিষ্ঠান / Educational Institution</label>
+      <input id="rInstitution" placeholder="স্কুল/মাদ্রাসার নাম" />
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>শ্রেণি / Class</label>
+        <select id="rClass">
+          <option value="">-- Select --</option>
+          <option value="3">৩ / Class 3</option>
+          <option value="4">৪ / Class 4</option>
+          <option value="5">৫ / Class 5</option>
+          <option value="6">৬ / Class 6</option>
+          <option value="7">৭ / Class 7</option>
+          <option value="8">৮ / Class 8</option>
+          <option value="9">৯ / Class 9</option>
+          <option value="10">১০ / Class 10</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>শাখা / Section</label>
+        <input id="rSection" placeholder="যেমন: ক / A" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>রোল নং / Roll No.</label>
+      <input id="rRoll" placeholder="Roll number" />
+    </div>
+
+    <p class="form-section-label">📍 Address & Contact</p>
+
+    <div class="field">
+      <label>বর্তমান ঠিকানা / Present Address</label>
+      <input id="rPresentAddr" placeholder="গ্রাম / এলাকা / শহর" />
+    </div>
+
+    <div class="field">
+      <label>স্থায়ী ঠিকানা / Permanent Address</label>
+      <input id="rPermAddr" placeholder="স্থায়ী ঠিকানা" />
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>টেলিফোন/মোবাইল / Phone *</label>
+        <input id="rPhone" placeholder="01XXXXXXXXX" type="tel" />
+      </div>
+      <div class="field">
+        <label>ই-মেইল / E-mail</label>
+        <input id="rEmail" placeholder="email@example.com" type="email" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>ফেসবুক / Facebook</label>
+      <input id="rFacebook" placeholder="Facebook profile link / name" />
+    </div>
+
+    <button class="btn-primary" id="regSubmitBtn">রেজিস্ট্রেশন সম্পন্ন করুন / Submit Registration ✅</button>
+    <p class="error-msg" id="regError"></p>
+    <p class="reg-success" id="regSuccess" style="display:none;"></p>
+
+    <button class="btn-secondary" id="regBackBtn" style="margin-top:10px;">← ফিরে যান / Go Back</button>
   </div>
 
   <!-- REGISTRATION -->
   <div class="card" id="startCard" style="display:none;">
-    <h2>📝 Registration / নিবন্ধন</h2>
+    <h2>📝 ফর্মটি পূরণ করুন / Fill the Form</h2>
 
     <p class="form-section-label">👤 Personal Info</p>
 
@@ -580,6 +716,6 @@
   </form>
   <iframe name="hiddenFrame" id="hiddenFrame" style="display:none;"></iframe>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

@@ -25,13 +25,9 @@ const SECONDS_PER_QUESTION = 20;
 const TOTAL_QUESTIONS = 60;
 const STORAGE_KEY = "ramadan_genius_v2";
 
-// Contest window: Asia/Dhaka
-// ORIGINAL (restore after testing):
-// const CONTEST_START_ISO = "2026-03-07T10:00:00+06:00";
-// const CONTEST_END_ISO = "2026-03-08T10:00:00+06:00";
-// TEMPORARY TEST MODE:
-const CONTEST_START_ISO = "2026-03-05T00:00:00+06:00";
-const CONTEST_END_ISO = "2026-03-08T10:00:00+06:00";
+// Contest window: Asia/Dhaka — March 9 8AM to March 10 11:30PM
+const CONTEST_START_ISO = "2026-03-09T08:00:00+06:00";
+const CONTEST_END_ISO   = "2026-03-10T23:30:00+06:00";
 const CONTEST_START_MS = Date.parse(CONTEST_START_ISO);
 const CONTEST_END_MS = Date.parse(CONTEST_END_ISO);
 const SUBMISSION_GRACE_MINUTES = 30;
@@ -60,11 +56,13 @@ const i18n = {
     gateTitle_grace: "\u{1F552} Submission Grace \u099A\u09B2\u099B\u09C7",
     gateTitle_after: "\u{1F512} \u09AA\u09CD\u09B0\u09A4\u09BF\u09AF\u09CB\u0997\u09BF\u09A4\u09BE \u09B6\u09C7\u09B7",
     salam: "\u0986\u09B8\u09B8\u09BE\u09B2\u09BE\u09AE\u09C1\u09AF\u09BC\u09BE\u09B2\u09BE\u0987\u0995\u09C1\u09AE",
-    desc: '\u09AA\u09AC\u09BF\u09A4\u09CD\u09B0 \u09AE\u09BE\u09B9\u09C7 \u09B0\u09AE\u099C\u09BE\u09A8\u0995\u09C7 \u09B8\u09BE\u09AE\u09A8\u09C7 \u09B0\u09C7\u0996\u09C7 \u09B6\u09BF\u09B6\u09C1 \u09AC\u09BF\u0995\u09BE\u09B6 \u0995\u09BE\u09B0\u09CD\u09AF\u0995\u09CD\u09B0\u09AE\u09C7\u09B0 \u0985\u0982\u09B6 \u09B9\u09BF\u09B8\u09C7\u09AC\u09C7 <strong style="color:var(--accent)">\u09AB\u09C1\u09B2\u0995\u09C1\u0981\u09DC\u09BF \u0986\u09B8\u09B0</strong> \u09A2\u09BE\u0995\u09BE \u09AE\u09B9\u09BE\u09A8\u0997\u09B0\u09C0 \u099D\u09BF\u0999\u09CD\u0997\u09C7\u09AB\u09C1\u09B2 \u09B6\u09BE\u0996\u09BE \u0986\u09AF\u09BC\u09CB\u099C\u09A8 \u0995\u09B0\u099B\u09C7 <strong style="color:var(--gold)">\u201C\u09B0\u09AE\u09BE\u09A6\u09BE\u09A8 \u099C\u09BF\u09A8\u09BF\u09AF\u09BC\u09BE\u09B8 \u09E8\u09E6\u09E8\u09EC\u201D</strong>\u0964 \u098F\u0987 \u0985\u09A8\u09A8\u09CD\u09AF \u0986\u09AF\u09BC\u09CB\u099C\u09A8\u099F\u09BF \u0986\u0997\u09BE\u09AE\u09C0 <strong>\u09ED-\u09EE \u09AE\u09BE\u09B0\u09CD\u099A</strong> \u09E8 \u09A6\u09BF\u09A8\u09AC\u09CD\u09AF\u09BE\u09AA\u09C0 \u0985\u09A8\u09B2\u09BE\u0987\u09A8\u09C7 \u0985\u09A8\u09C1\u09B7\u09CD\u09A0\u09BF\u09A4 \u09B9\u09AC\u09C7\u0964',
+    desc: '\u09AA\u09AC\u09BF\u09A4\u09CD\u09B0 \u09AE\u09BE\u09B9\u09C7 \u09B0\u09AE\u099C\u09BE\u09A8\u0995\u09C7 \u09B8\u09BE\u09AE\u09A8\u09C7 \u09B0\u09C7\u0996\u09C7 \u09B6\u09BF\u09B6\u09C1 \u09AC\u09BF\u0995\u09BE\u09B6 \u0995\u09BE\u09B0\u09CD\u09AF\u0995\u09CD\u09B0\u09AE\u09C7\u09B0 \u0985\u0982\u09B6 \u09B9\u09BF\u09B8\u09C7\u09AC\u09C7 <strong style="color:var(--accent)">\u09AB\u09C1\u09B2\u0995\u09C1\u0981\u09DC\u09BF \u0986\u09B8\u09B0</strong> \u09A2\u09BE\u0995\u09BE \u09AE\u09B9\u09BE\u09A8\u0997\u09B0\u09C0 \u099D\u09BF\u0999\u09CD\u0997\u09C7\u09AB\u09C1\u09B2 \u09B6\u09BE\u0996\u09BE \u0986\u09AF\u09BC\u09CB\u099C\u09A8 \u0995\u09B0\u099B\u09C7 <strong style="color:var(--gold)">\u201C\u09B0\u09AE\u09BE\u09A6\u09BE\u09A8 \u099C\u09BF\u09A8\u09BF\u09AF\u09BC\u09BE\u09B8 \u09E8\u09E6\u09E8\u09EC\u201D</strong>\u0964 \u098F\u0987 \u0985\u09A8\u09A8\u09CD\u09AF \u0986\u09AF\u09BC\u09CB\u099C\u09A8\u099F\u09BF \u0986\u0997\u09BE\u09AE\u09C0 <strong>\u09EF-\u09E7\u09E6 \u09AE\u09BE\u09B0\u09CD\u099A</strong> \u09E8 \u09A6\u09BF\u09A8\u09AC\u09CD\u09AF\u09BE\u09AA\u09C0 \u0985\u09A8\u09B2\u09BE\u0987\u09A8\u09C7 \u0985\u09A8\u09C1\u09B7\u09CD\u09A0\u09BF\u09A4 \u09B9\u09AC\u09C7\u0964',
     rulesTitle: "\u{1F4CB} \u09A8\u09BF\u09AF\u09BC\u09AE\u09BE\u09AC\u09B2\u09C0",
     rules: [
       '<strong>\u0997\u09CD\u09B0\u09C1\u09AA \u0995:</strong> \u09E9\u09AF\u09BC \u2014 \u09EB\u09AE \u09B6\u09CD\u09B0\u09C7\u09A3\u09BF &nbsp;|&nbsp; <strong>\u0997\u09CD\u09B0\u09C1\u09AA \u0996:</strong> \u09EC\u09B7\u09CD\u09A0 \u2014 \u09E7\u09E6\u09AE \u09B6\u09CD\u09B0\u09C7\u09A3\u09BF',
       '\u09EC\u09E6\u099F\u09BF MCQ \u09AA\u09CD\u09B0\u09B6\u09CD\u09A8, \u09B8\u09AE\u09AF\u09BC \u09E8\u09E6 \u09AE\u09BF\u09A8\u09BF\u099F',
+      '\u09AA\u09CD\u09B0\u09A4\u09CD\u09AF\u09C7\u0995 \u09AA\u09CD\u09B0\u09B6\u09CD\u09A8\u09C7\u09B0 \u099C\u09A8\u09CD\u09AF \u09E8\u09E6 \u09B8\u09C7\u0995\u09C7\u09A8\u09CD\u09A1 \u09B8\u09AE\u09AF\u09BC',
+      '\u09AA\u09B0\u09AC\u09B0\u09CD\u09A4\u09C0/Next \u09AC\u09BE\u099F\u09A8\u09C7 \u0995\u09CD\u09B2\u09BF\u0995 \u0995\u09B0\u09BE\u09B0 \u09AA\u09B0 \u0986\u0997\u09C7\u09B0 \u09AA\u09CD\u09B0\u09B6\u09CD\u09A8\u09C7 \u09AB\u09BF\u09B0\u09C7 \u0986\u09B8\u09BE \u09AF\u09BE\u09AC\u09C7 \u09A8\u09BE',
       '\u09AA\u09CD\u09B0\u09A4\u09BF \u09AD\u09C1\u09B2 \u0989\u09A4\u09CD\u09A4\u09B0\u09C7 \u09E6.\u09E8\u09EB \u09A8\u09AE\u09CD\u09AC\u09B0 \u0995\u09BE\u099F\u09BE \u09AF\u09BE\u09AC\u09C7 (\u09A8\u09C7\u0997\u09C7\u099F\u09BF\u09AD \u09AE\u09BE\u09B0\u09CD\u0995\u09BF\u0982)',
       '\u09AC\u09BE\u0982\u09B2\u09BE \u0993 \u0987\u0982\u09B0\u09C7\u099C\u09BF \u09A6\u09C1\u0987 \u09AB\u09B0\u09AE\u09C7\u099F\u09C7 \u09AA\u09CD\u09B0\u09B6\u09CD\u09A8',
       '\u0986\u0995\u09B0\u09CD\u09B7\u09A3\u09C0\u09AF\u09BC \u09AA\u09C1\u09B0\u09B8\u09CD\u0995\u09BE\u09B0, \u09B8\u09BE\u09B0\u09CD\u099F\u09BF\u09AB\u09BF\u0995\u09C7\u099F \u0993 \u0995\u09CD\u09B0\u09C7\u09B8\u09CD\u099F',
@@ -76,6 +74,7 @@ const i18n = {
     syllabusBBody: "\u2022 \u09B8\u09BE\u0993\u09AE\u09C7\u09B0 \u09AE\u09CC\u09B2\u09BF\u0995 \u099C\u09CD\u099E\u09BE\u09A8<br/>\u2022 \u0995\u09C1\u09B0\u0986\u09A8 \u09A8\u09BE\u099C\u09BF\u09B2\u09C7\u09B0 \u0987\u09A4\u09BF\u09B9\u09BE\u09B8<br/>\u2022 \u09AC\u09A6\u09B0 \u09AF\u09C1\u09A6\u09CD\u09A7<br/>\u2022 \u0996\u09A8\u09CD\u09A6\u0995 \u09AF\u09C1\u09A6\u09CD\u09A7",
     contactTitle: "\u{1F4DE} \u09AF\u09CB\u0997\u09BE\u09AF\u09CB\u0997",
     enterBtn: "\u0985\u0982\u09B6\u0997\u09CD\u09B0\u09B9\u09A3 \u0995\u09B0\u09C1\u09A8 \u{1F680}",
+    preRegBtn: "\u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u0995\u09B0\u09C1\u09A8 / Register \u270D\uFE0F",
     msg_before: "\u0995\u09BE\u0989\u09A8\u09CD\u099F\u09A1\u09BE\u0989\u09A8 \u09B6\u09C7\u09B7 \u09B9\u09B2\u09C7 \u0995\u09C1\u0987\u099C \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u09A8\u0964",
     msg_live: "\u098F\u0996\u09A8 \u0985\u0982\u09B6\u0997\u09CD\u09B0\u09B9\u09A3 \u0995\u09B0\u09BE \u09AF\u09BE\u09AC\u09C7\u0964 \u09A8\u09BF\u099A\u09C7 \u09B6\u09C7\u09B7 \u09B9\u0993\u09AF\u09BC\u09BE\u09B0 \u0995\u09BE\u0989\u09A8\u09CD\u099F\u09A1\u09BE\u0989\u09A8 \u09A6\u09C7\u0996\u09C1\u09A8\u0964",
     msg_grace: "\u09A8\u09A4\u09C1\u09A8 \u0995\u09C1\u0987\u099C \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09BE \u09AF\u09BE\u09AC\u09C7 \u09A8\u09BE\u0964 \u09AF\u09BE\u09B0\u09BE \u0986\u0997\u09C7 \u09B6\u09C1\u09B0\u09C1 \u0995\u09B0\u09C7\u099B\u09C7 \u09A4\u09BE\u09B0\u09BE \u0995\u09C7\u09AC\u09B2 submit/retry \u0995\u09B0\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u0964",
@@ -89,11 +88,13 @@ const i18n = {
     gateTitle_grace: "\u{1F552} Submission Grace Period",
     gateTitle_after: "\u{1F512} Competition Ended",
     salam: "Assalamu Alaikum",
-    desc: 'As part of the child development program ahead of the holy month of Ramadan, <strong style="color:var(--accent)">Phulkuri Asor</strong> Dhaka Mahanagari Jhingephul branch is organizing <strong style="color:var(--gold)">"Ramadan Genius 2026"</strong>. This unique event will be held online over 2 days on <strong>March 7\u20138</strong>.',
+    desc: 'As part of the child development program ahead of the holy month of Ramadan, <strong style="color:var(--accent)">Phulkuri Asor</strong> Dhaka Mahanagari Jhingephul branch is organizing <strong style="color:var(--gold)">"Ramadan Genius 2026"</strong>. This unique event will be held online over 2 days on <strong>March 9\u201310</strong>.',
     rulesTitle: "\u{1F4CB} Rules & Guidelines",
     rules: [
       '<strong>Group A:</strong> Class 3\u20135 &nbsp;|&nbsp; <strong>Group B:</strong> Class 6\u201310',
       '60 MCQ questions, 20 minutes total',
+      '20 seconds per question',
+      'Once you click Next, you cannot go back to the previous question',
       '0.25 marks deducted per wrong answer (negative marking)',
       'Questions in both Bangla and English',
       'Attractive prizes, certificates & crests',
@@ -105,6 +106,7 @@ const i18n = {
     syllabusBBody: "\u2022 Basic knowledge of Sawm (Fasting)<br/>\u2022 History of Quran revelation<br/>\u2022 Battle of Badr<br/>\u2022 Battle of Khandaq",
     contactTitle: "\u{1F4DE} Contact",
     enterBtn: "Enter Quiz \u{1F680}",
+    preRegBtn: "Register \u270D\uFE0F",
     msg_before: "Quiz starts when the countdown reaches zero.",
     msg_live: "The competition is live now. See the countdown below.",
     msg_grace: "No new quiz starts. Only previously started participants may submit/retry.",
@@ -152,6 +154,8 @@ function applyLang(lang) {
   $("contactTitle").innerHTML = t.contactTitle;
   // Enter button
   $("enterBtn").innerText = t.enterBtn;
+  // Pre-registration button
+  if ($("preRegBtn")) $("preRegBtn").innerText = t.preRegBtn;
 
   // Re-render gate to update phase-dependent text
   renderGate();
@@ -288,6 +292,11 @@ function renderGate() {
     $("gateCountdown").innerText = formatCountdown(CONTEST_START_MS - now);
     if (landing) landing.style.display = "";
     hide("enterBtn");
+    // Show pre-registration button before contest
+    if ($("preRegBtn")) {
+      $("preRegBtn").innerText = t.preRegBtn;
+      show("preRegBtn");
+    }
     return;
   }
 
@@ -299,6 +308,7 @@ function renderGate() {
     $("gateMessage").innerHTML = t.msg_after;
     $("gateCountdown").innerText = currentLang === "en" ? "00:00:00" : "\u09E6\u09E6:\u09E6\u09E6:\u09E6\u09E6";
     hide("enterBtn");
+    if ($("preRegBtn")) hide("preRegBtn");
     return;
   }
 
@@ -307,6 +317,7 @@ function renderGate() {
     $("gateMessage").innerHTML = t.msg_grace;
     $("gateCountdown").innerText = formatCountdown(CONTEST_GRACE_END_MS - now);
     hide("enterBtn");
+    if ($("preRegBtn")) hide("preRegBtn");
     return;
   }
 
@@ -315,6 +326,7 @@ function renderGate() {
   $("gateCountdown").innerText = formatCountdown(CONTEST_END_MS - now);
   $("enterBtn").innerText = t.enterBtn;
   show("enterBtn");
+  if ($("preRegBtn")) hide("preRegBtn");
 }
 
 function startGateTicker() {
@@ -817,6 +829,92 @@ async function retrySubmit() {
   $("retryBtn").style.display = "";
 }
 
+
+// ====== PRE-REGISTRATION ======
+function showPreRegForm() {
+  hide("gateCard");
+  show("preRegCard");
+  $("regError").innerText = "";
+  $("regSuccess").style.display = "none";
+}
+
+function hidePreRegForm() {
+  hide("preRegCard");
+  show("gateCard");
+}
+
+async function submitRegistration() {
+  const name = ($("rName").value || "").trim();
+  const phone = ($("rPhone").value || "").trim();
+
+  if (!name) { $("regError").innerText = "\u09A8\u09BE\u09AE \u09B2\u09BF\u0996\u09C1\u09A8 / Please enter your name."; return; }
+  if (!phone) { $("regError").innerText = "\u09AB\u09CB\u09A8 \u09A8\u09AE\u09CD\u09AC\u09B0 \u09B2\u09BF\u0996\u09C1\u09A8 / Please enter phone number."; return; }
+
+  $("regError").innerText = "";
+  $("regSubmitBtn").disabled = true;
+  $("regSubmitBtn").innerText = "Submitting...";
+
+  const payload = {
+    type: "registration",
+    name: name,
+    fatherName: ($("rFatherName").value || "").trim(),
+    fatherProf: ($("rFatherProf").value || "").trim(),
+    motherName: ($("rMotherName").value || "").trim(),
+    motherProf: ($("rMotherProf").value || "").trim(),
+    dob: ($("rDob").value || "").trim(),
+    bloodGroup: ($("rBlood").value || "").trim(),
+    institution: ($("rInstitution").value || "").trim(),
+    class: ($("rClass").value || "").trim(),
+    section: ($("rSection").value || "").trim(),
+    rollNo: ($("rRoll").value || "").trim(),
+    presentAddress: ($("rPresentAddr").value || "").trim(),
+    permanentAddress: ($("rPermAddr").value || "").trim(),
+    phone: phone,
+    email: ($("rEmail").value || "").trim(),
+    facebook: ($("rFacebook").value || "").trim()
+  };
+
+  // Submit via hidden form
+  const ok = await submitRegToSheet(payload);
+
+  $("regSubmitBtn").disabled = false;
+  $("regSubmitBtn").innerText = "\u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AE\u09CD\u09AA\u09A8\u09CD\u09A8 \u0995\u09B0\u09C1\u09A8 / Submit Registration \u2705";
+
+  if (ok) {
+    $("regSuccess").innerHTML =
+      "\u2705 \u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AB\u09B2! \u09AA\u09CD\u09B0\u09A4\u09BF\u09AF\u09CB\u0997\u09BF\u09A4\u09BE \u09B6\u09C1\u09B0\u09C1 \u09B9\u09B2\u09C7 \u098F\u0987 \u09AA\u09C7\u0987\u099C\u09C7 \u098F\u09B8\u09C7 \u0995\u09C1\u0987\u099C \u09A6\u09BF\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u09A8\u0964<br/>Registration successful! Come back when the contest starts to take the quiz.";
+    $("regSuccess").style.display = "";
+  } else {
+    $("regError").innerText = "\u09B8\u09BE\u09AC\u09AE\u09BF\u099F \u09AC\u09CD\u09AF\u09B0\u09CD\u09A5\u0964 \u0986\u09AC\u09BE\u09B0 \u099A\u09C7\u09B7\u09CD\u099F\u09BE \u0995\u09B0\u09C1\u09A8\u0964 / Submission failed. Please try again.";
+  }
+}
+
+function submitRegToSheet(payload) {
+  return new Promise((resolve) => {
+    const form = $("submitForm");
+    $("secretField").value = SECRET;
+    $("payloadField").value = JSON.stringify(payload);
+    form.action = getNextEndpoint();
+
+    const iframe = $("hiddenFrame");
+    let done = false;
+
+    iframe.onload = () => {
+      if (done) return;
+      done = true;
+      resolve(true);
+    };
+
+    form.submit();
+
+    setTimeout(() => {
+      if (done) return;
+      done = true;
+      resolve(false);
+    }, 15000);
+  });
+}
+
 // ====== INIT ======
 window.addEventListener("beforeunload", (e) => {
   if (state && !state.submitted && state.currentIndex < (state.quiz ? state.quiz.length : 0)) {
@@ -835,6 +933,9 @@ window.addEventListener("load", async () => {
   });
 
   $("enterBtn").addEventListener("click", enterQuizFromGate);
+  if ($("preRegBtn")) $("preRegBtn").addEventListener("click", showPreRegForm);
+  if ($("regBackBtn")) $("regBackBtn").addEventListener("click", hidePreRegForm);
+  if ($("regSubmitBtn")) $("regSubmitBtn").addEventListener("click", submitRegistration);
   $("startBtn").addEventListener("click", startQuiz);
   $("nextBtn").addEventListener("click", goToNextQuestion);
   $("retryBtn").addEventListener("click", retrySubmit);
