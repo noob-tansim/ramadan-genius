@@ -653,34 +653,41 @@ function buildPayload() {
   };
 }
 
-// ====== SUBMIT via HIDDEN FORM (CORS-safe) ======
-function submitToSheet(payload) {
+// ====== SUBMIT (fetch first for score + error detection, iframe fallback) ======
+async function submitToSheet(payload) {
+  const url = getNextEndpoint();
+  const body = new URLSearchParams({
+    secret: SECRET,
+    payload: JSON.stringify(payload)
+  });
+
+  // Try fetch first — gives us actual server response (score, errors)
+  try {
+    const resp = await fetch(url, {
+      method: "POST",
+      body: body,
+      redirect: "follow"
+    });
+    const data = await resp.json();
+    console.log("[QUIZ] Server response:", data);
+    if (data.ok) return { ok: true, score: data.score, correct: data.correct, wrong: data.wrong, unanswered: data.unanswered };
+    return { ok: false, error: data.error || "Unknown server error" };
+  } catch (fetchErr) {
+    console.warn("[QUIZ] fetch failed, falling back to iframe:", fetchErr);
+  }
+
+  // Fallback: iframe POST (can't read response)
   return new Promise((resolve) => {
     const form = $("submitForm");
     const iframe = $("hiddenFrame");
-
-    // Clear any previous handler
     iframe.onload = null;
-
     $("secretField").value = SECRET;
     $("payloadField").value = JSON.stringify(payload);
-    form.action = getNextEndpoint();
-
+    form.action = url;
     let done = false;
-
-    iframe.onload = () => {
-      if (done) return;
-      done = true;
-      resolve(true);
-    };
-
+    iframe.onload = () => { if (done) return; done = true; resolve({ ok: true, viaiframe: true }); };
     form.submit();
-
-    setTimeout(() => {
-      if (done) return;
-      done = true;
-      resolve(false);
-    }, 15000);
+    setTimeout(() => { if (done) return; done = true; resolve({ ok: false, error: "Timeout" }); }, 15000);
   });
 }
 
@@ -690,10 +697,12 @@ async function submitWithRetry(payload, hooks = {}) {
       hooks.onAttempt(attempt, SUBMIT_MAX_ATTEMPTS);
     }
 
-    const ok = await submitToSheet(payload);
-    if (ok) {
-      return { ok: true, attempts: attempt };
+    const result = await submitToSheet(payload);
+    if (result.ok) {
+      return { ok: true, attempts: attempt, score: result.score, correct: result.correct, wrong: result.wrong, unanswered: result.unanswered, viaiframe: result.viaiframe };
     }
+
+    console.warn(`[QUIZ] Attempt ${attempt} failed:`, result.error);
 
     if (attempt < SUBMIT_MAX_ATTEMPTS) {
       const delayMs = computeRetryDelayMs(attempt);
@@ -755,9 +764,15 @@ async function finishQuiz() {
     state.submitted = true;
     saveState();
     localStorage.removeItem(STORAGE_KEY);
-    $("finishMsg").innerHTML =
-      `✅ সফলভাবে জমা হয়েছে! (${toBanglaNum(result.attempts)} চেষ্টায়)<br/>` +
-      `Submitted successfully in ${result.attempts} attempt(s). You may close this page.`;
+    let msg = `✅ সফলভাবে জমা হয়েছে! (${toBanglaNum(result.attempts)} চেষ্টায়)<br/>`;
+    if (result.score !== undefined && !result.viaiframe) {
+      msg += `<br/><strong style="font-size:1.3em;color:var(--gold)">স্কোর / Score: ${result.score}</strong><br/>`;
+      msg += `সঠিক / Correct: ${result.correct} &nbsp;|&nbsp; ভুল / Wrong: ${result.wrong} &nbsp;|&nbsp; অনুত্তরিত / Unanswered: ${result.unanswered}<br/><br/>`;
+    } else if (result.viaiframe) {
+      msg += `<br/><em style="color:var(--muted)">স্কোর দেখা যাচ্ছে না (iframe fallback)। আপনার উত্তর সফলভাবে জমা হয়েছে।<br/>Score unavailable (iframe fallback). Your answers were submitted successfully.</em><br/><br/>`;
+    }
+    msg += `Submitted successfully in ${result.attempts} attempt(s). You may close this page.`;
+    $("finishMsg").innerHTML = msg;
     finishing = false;
     return;
   }
@@ -814,9 +829,15 @@ async function retrySubmit() {
     state.submitted = true;
     saveState();
     localStorage.removeItem(STORAGE_KEY);
-    $("finishMsg").innerHTML =
-      `✅ সফলভাবে জমা হয়েছে! (${toBanglaNum(result.attempts)} চেষ্টায়)<br/>` +
-      `Submitted successfully in ${result.attempts} attempt(s). You may close this page.`;
+    let msg = `✅ সফলভাবে জমা হয়েছে! (${toBanglaNum(result.attempts)} চেষ্টায়)<br/>`;
+    if (result.score !== undefined && !result.viaiframe) {
+      msg += `<br/><strong style="font-size:1.3em;color:var(--gold)">স্কোর / Score: ${result.score}</strong><br/>`;
+      msg += `সঠিক / Correct: ${result.correct} &nbsp;|&nbsp; ভুল / Wrong: ${result.wrong} &nbsp;|&nbsp; অনুত্তরিত / Unanswered: ${result.unanswered}<br/><br/>`;
+    } else if (result.viaiframe) {
+      msg += `<br/><em style="color:var(--muted)">স্কোর দেখা যাচ্ছে না (iframe fallback)। আপনার উত্তর সফলভাবে জমা হয়েছে।<br/>Score unavailable (iframe fallback). Your answers were submitted successfully.</em><br/><br/>`;
+    }
+    msg += `Submitted successfully in ${result.attempts} attempt(s). You may close this page.`;
+    $("finishMsg").innerHTML = msg;
     return;
   }
 
