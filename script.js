@@ -898,17 +898,20 @@ async function submitRegistration() {
     facebook: ($("rFacebook").value || "").trim()
   };
 
-  // Submit via hidden form (with iframe reset for reliability)
-  const ok = await submitRegToSheet(payload);
+  // Submit registration (uses fetch with real error detection)
+  const result = await submitRegToSheet(payload);
 
   regSubmitting = false;
 
-  if (ok) {
+  if (result.ok) {
     $("regSubmitBtn").disabled = true;
     $("regSubmitBtn").innerText = "\u2705 Submitted";
     $("regSuccess").innerHTML =
       "\u2705 \u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AB\u09B2! \u09AA\u09CD\u09B0\u09A4\u09BF\u09AF\u09CB\u0997\u09BF\u09A4\u09BE \u09B6\u09C1\u09B0\u09C1 \u09B9\u09B2\u09C7 \u098F\u0987 \u09AA\u09C7\u0987\u099C\u09C7 \u098F\u09B8\u09C7 \u0995\u09C1\u0987\u099C \u09A6\u09BF\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u09A8\u0964<br/>Registration successful! Come back when the contest starts.";
     $("regSuccess").style.display = "";
+    if (result.viaiframe) {
+      console.warn("[REG] Submitted via iframe fallback — cannot confirm server saved it. Check the sheet.");
+    }
     // Show "Register Another" button after 2 seconds
     setTimeout(() => {
       if ($("regAnotherBtn")) $("regAnotherBtn").style.display = "";
@@ -916,38 +919,46 @@ async function submitRegistration() {
   } else {
     $("regSubmitBtn").disabled = false;
     $("regSubmitBtn").innerText = "\u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AE\u09CD\u09AA\u09A8\u09CD\u09A8 \u0995\u09B0\u09C1\u09A8 / Submit Registration \u2705";
-    $("regError").innerText = "\u09B8\u09BE\u09AC\u09AE\u09BF\u099F \u09AC\u09CD\u09AF\u09B0\u09CD\u09A5\u0964 \u0986\u09AC\u09BE\u09B0 \u099A\u09C7\u09B7\u09CD\u099F\u09BE \u0995\u09B0\u09C1\u09A8\u0964 / Submission failed. Please try again.";
+    const errMsg = result.error || "Submission failed.";
+    $("regError").innerText = "\u274C " + errMsg;
+    console.error("[REG] Server rejected:", errMsg);
   }
 }
 
-function submitRegToSheet(payload) {
+async function submitRegToSheet(payload) {
+  const url = getNextEndpoint();
+  const body = new URLSearchParams({
+    secret: SECRET,
+    payload: JSON.stringify(payload)
+  });
+
+  // Try fetch first (gives us actual error detection)
+  try {
+    const resp = await fetch(url, {
+      method: "POST",
+      body: body,
+      redirect: "follow"
+    });
+    const data = await resp.json();
+    console.log("[REG] Server response:", data);
+    if (data.ok) return { ok: true };
+    return { ok: false, error: data.error || "Unknown server error" };
+  } catch (fetchErr) {
+    console.warn("[REG] fetch failed, falling back to iframe:", fetchErr);
+  }
+
+  // Fallback: iframe POST (can't read response, assume success)
   return new Promise((resolve) => {
     const form = $("submitForm");
     const iframe = $("hiddenFrame");
-
-    // Clear any previous handler
     iframe.onload = null;
-
     $("secretField").value = SECRET;
     $("payloadField").value = JSON.stringify(payload);
-    form.action = getNextEndpoint();
-
+    form.action = url;
     let done = false;
-
-    iframe.onload = () => {
-      if (done) return;
-      done = true;
-      resolve(true);
-    };
-
+    iframe.onload = () => { if (done) return; done = true; resolve({ ok: true, viaiframe: true }); };
     form.submit();
-
-    // Timeout fallback: form POST fires even if onload is unreliable
-    setTimeout(() => {
-      if (done) return;
-      done = true;
-      resolve(true);  // Assume success: data was POSTed
-    }, 8000);
+    setTimeout(() => { if (done) return; done = true; resolve({ ok: true, viaiframe: true }); }, 8000);
   });
 }
 
