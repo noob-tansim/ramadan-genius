@@ -7,7 +7,7 @@
 // Add all your Apps Script Web App URLs here (1 to 3 accounts)
 // Each URL is a deployed Web App from a different Google account
 const APPS_SCRIPT_URLS = [
-  "https://script.google.com/macros/s/AKfycbwvkQWAVqYVbBkLPI1My7R7kSv9jrhKYG9axgQ74Q_bXRtnYNaHgbuNgA6EHZd2uMcokA/exec",
+  "https://script.google.com/macros/s/AKfycbzkiO0m-IDdEt-3efQk7zhe4azWcYVNOfcsmLnDjB17ASEhglAHG22pKrk2VK0rkPDIqA/exec",
   // "PASTE_URL_FROM_GOOGLE_ACCOUNT_2",  // uncomment when ready
   // "PASTE_URL_FROM_GOOGLE_ACCOUNT_3",  // uncomment when ready
 ];
