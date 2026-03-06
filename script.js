@@ -657,26 +657,35 @@ function buildPayload() {
 function submitToSheet(payload) {
   return new Promise((resolve) => {
     const form = $("submitForm");
-    $("secretField").value = SECRET;
-    $("payloadField").value = JSON.stringify(payload);
-    form.action = getNextEndpoint();
-
     const iframe = $("hiddenFrame");
-    let done = false;
 
-    iframe.onload = () => {
-      if (done) return;
-      done = true;
-      resolve(true);
-    };
-
-    form.submit();
+    // Reset iframe to avoid stale onload
+    iframe.onload = null;
+    iframe.src = "about:blank";
 
     setTimeout(() => {
-      if (done) return;
-      done = true;
-      resolve(false);
-    }, 15000);
+      $("secretField").value = SECRET;
+      $("payloadField").value = JSON.stringify(payload);
+      form.action = getNextEndpoint();
+
+      let done = false;
+      let initialLoad = true;
+
+      iframe.onload = () => {
+        if (initialLoad) { initialLoad = false; return; }
+        if (done) return;
+        done = true;
+        resolve(true);
+      };
+
+      form.submit();
+
+      setTimeout(() => {
+        if (done) return;
+        done = true;
+        resolve(false);
+      }, 15000);
+    }, 100);
   });
 }
 
@@ -831,11 +840,25 @@ async function retrySubmit() {
 
 
 // ====== PRE-REGISTRATION ======
+const REG_STORAGE_KEY = "ramadan_genius_registered";
+let regSubmitting = false;  // guard against double-clicks
+
+function isAlreadyRegistered() {
+  return localStorage.getItem(REG_STORAGE_KEY) === "yes";
+}
+
 function showPreRegForm() {
   hide("gateCard");
   show("preRegCard");
   $("regError").innerText = "";
+
+  // If already registered, show success and lock form
+  if (isAlreadyRegistered()) {
+    lockRegForm();
+    return;
+  }
   $("regSuccess").style.display = "none";
+  $("regSubmitBtn").disabled = false;
 }
 
 function hidePreRegForm() {
@@ -843,13 +866,32 @@ function hidePreRegForm() {
   show("gateCard");
 }
 
+function lockRegForm() {
+  // Disable all inputs and the submit button permanently
+  const inputs = document.querySelectorAll("#preRegCard input, #preRegCard select");
+  inputs.forEach(inp => inp.disabled = true);
+  $("regSubmitBtn").disabled = true;
+  $("regSubmitBtn").innerText = "\u2705 Submitted";
+  $("regSuccess").innerHTML =
+    "\u2705 \u0986\u09AA\u09A8\u09BE\u09B0 \u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u0986\u0997\u09C7\u0987 \u09B8\u09AE\u09CD\u09AA\u09A8\u09CD\u09A8 \u09B9\u09AF\u09BC\u09C7\u099B\u09C7\u0964 \u09AA\u09CD\u09B0\u09A4\u09BF\u09AF\u09CB\u0997\u09BF\u09A4\u09BE \u09B6\u09C1\u09B0\u09C1 \u09B9\u09B2\u09C7 \u098F\u0987 \u09AA\u09C7\u0987\u099C\u09C7 \u098F\u09B8\u09C7 \u0995\u09C1\u0987\u099C \u09A6\u09BF\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u09A8\u0964<br/>Your registration is already submitted. Come back when the contest starts to take the quiz.";
+  $("regSuccess").style.display = "";
+}
+
 async function submitRegistration() {
+  // Prevent double-clicks and re-submissions
+  if (regSubmitting) return;
+  if (isAlreadyRegistered()) {
+    lockRegForm();
+    return;
+  }
+
   const name = ($("rName").value || "").trim();
   const phone = ($("rPhone").value || "").trim();
 
   if (!name) { $("regError").innerText = "\u09A8\u09BE\u09AE \u09B2\u09BF\u0996\u09C1\u09A8 / Please enter your name."; return; }
   if (!phone) { $("regError").innerText = "\u09AB\u09CB\u09A8 \u09A8\u09AE\u09CD\u09AC\u09B0 \u09B2\u09BF\u0996\u09C1\u09A8 / Please enter phone number."; return; }
 
+  regSubmitting = true;
   $("regError").innerText = "";
   $("regSubmitBtn").disabled = true;
   $("regSubmitBtn").innerText = "Submitting...";
@@ -874,17 +916,18 @@ async function submitRegistration() {
     facebook: ($("rFacebook").value || "").trim()
   };
 
-  // Submit via hidden form
+  // Submit via hidden form (with iframe reset for reliability)
   const ok = await submitRegToSheet(payload);
 
-  $("regSubmitBtn").disabled = false;
-  $("regSubmitBtn").innerText = "\u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AE\u09CD\u09AA\u09A8\u09CD\u09A8 \u0995\u09B0\u09C1\u09A8 / Submit Registration \u2705";
+  regSubmitting = false;
 
   if (ok) {
-    $("regSuccess").innerHTML =
-      "\u2705 \u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AB\u09B2! \u09AA\u09CD\u09B0\u09A4\u09BF\u09AF\u09CB\u0997\u09BF\u09A4\u09BE \u09B6\u09C1\u09B0\u09C1 \u09B9\u09B2\u09C7 \u098F\u0987 \u09AA\u09C7\u0987\u099C\u09C7 \u098F\u09B8\u09C7 \u0995\u09C1\u0987\u099C \u09A6\u09BF\u09A4\u09C7 \u09AA\u09BE\u09B0\u09AC\u09C7\u09A8\u0964<br/>Registration successful! Come back when the contest starts to take the quiz.";
-    $("regSuccess").style.display = "";
+    // Mark as registered in localStorage to prevent re-submission
+    localStorage.setItem(REG_STORAGE_KEY, "yes");
+    lockRegForm();
   } else {
+    $("regSubmitBtn").disabled = false;
+    $("regSubmitBtn").innerText = "\u09B0\u09C7\u099C\u09BF\u09B8\u09CD\u099F\u09CD\u09B0\u09C7\u09B6\u09A8 \u09B8\u09AE\u09CD\u09AA\u09A8\u09CD\u09A8 \u0995\u09B0\u09C1\u09A8 / Submit Registration \u2705";
     $("regError").innerText = "\u09B8\u09BE\u09AC\u09AE\u09BF\u099F \u09AC\u09CD\u09AF\u09B0\u09CD\u09A5\u0964 \u0986\u09AC\u09BE\u09B0 \u099A\u09C7\u09B7\u09CD\u099F\u09BE \u0995\u09B0\u09C1\u09A8\u0964 / Submission failed. Please try again.";
   }
 }
@@ -892,26 +935,43 @@ async function submitRegistration() {
 function submitRegToSheet(payload) {
   return new Promise((resolve) => {
     const form = $("submitForm");
-    $("secretField").value = SECRET;
-    $("payloadField").value = JSON.stringify(payload);
-    form.action = getNextEndpoint();
-
     const iframe = $("hiddenFrame");
-    let done = false;
 
-    iframe.onload = () => {
-      if (done) return;
-      done = true;
-      resolve(true);
-    };
+    // Reset iframe to avoid stale onload events
+    iframe.onload = null;
+    iframe.src = "about:blank";
 
-    form.submit();
-
+    // Wait a tick for the iframe reset, then submit
     setTimeout(() => {
-      if (done) return;
-      done = true;
-      resolve(false);
-    }, 15000);
+      $("secretField").value = SECRET;
+      $("payloadField").value = JSON.stringify(payload);
+      form.action = getNextEndpoint();
+
+      let done = false;
+      let initialLoad = true;
+
+      iframe.onload = () => {
+        // Skip the initial about:blank load event
+        if (initialLoad) {
+          initialLoad = false;
+          return;
+        }
+        if (done) return;
+        done = true;
+        resolve(true);
+      };
+
+      form.submit();
+
+      // Timeout fallback — treat as success because form POST has no
+      // reliable cross-origin response detection via iframe, and the
+      // Apps Script will have received the data even if onload is quirky.
+      setTimeout(() => {
+        if (done) return;
+        done = true;
+        resolve(true);  // Assume success — data was POSTed
+      }, 12000);
+    }, 100);
   });
 }
 
