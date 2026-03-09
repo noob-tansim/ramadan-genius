@@ -11,7 +11,7 @@ A free, static-site quiz competition for 800–1,000 students over 2 days, using
 - **Bilingual**: Bangla + English for every question and option
 - **60 MCQs** per category with **20-second timer** per question
 - **Opening countdown page** before quiz entry
-- **Contest window lock**: only active between **7 Mar 2026, 10:00 AM** and **8 Mar 2026, 10:00 AM** (Asia/Dhaka)
+- **Contest window lock**: only active between **11 Mar 2026, 8:30 AM** and **12 Mar 2026, 11:30 PM** (Asia/Dhaka)
 - **Submission grace window**: 30 minutes (for participants who started before end time)
 - **Auto submit retry**: exponential backoff + jitter
 - Auto-advances when timer expires; also has a Next button
