@@ -25,7 +25,7 @@ const SECONDS_PER_QUESTION = 20;
 const TOTAL_QUESTIONS = 60;
 const STORAGE_KEY = "ramadan_genius_v2";
 
-// Contest window: Asia/Dhaka — March 9 8AM to March 10 11:30PM
+// Contest window: Asia/Dhaka — March 11 8:30AM to March 12 11:30PM
 const CONTEST_START_ISO = "2026-03-11T08:30:00+06:00";
 const CONTEST_END_ISO   = "2026-03-12T23:30:00+06:00";
 const CONTEST_START_MS = Date.parse(CONTEST_START_ISO);
@@ -1014,7 +1014,6 @@ window.addEventListener("load", async () => {
     return;
   }
 
-  if (isContestLive()) {
-    show("gateCard");
-  }
+  // Always show gate card (handles before/live/grace/after phases)
+  show("gateCard");
 });
